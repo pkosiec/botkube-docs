@@ -67,7 +67,7 @@ Run **@BotKube ping** to the channel where BotKube is added. The BotKube will re
 ### Managing notifications
 
 Depending upon your configuration, you will receive notifications about Kubernetes resources lifecycle events and their health.
-BotKube bot allows you to enable/disable notifications only from the configured channel. Run **/botkubehelp**, the bot will reply with the help message about the supported message formats.
+BotKube bot allows you to enable/disable notifications on each configured channel separately. Run **/botkubehelp**, the bot will reply with the help message about the supported message formats.
 
 #### View BotKube configuration
 
@@ -95,14 +95,14 @@ This command will open configmap specs in vim editor. Do the required changes, s
 
 If you want to stop receiving notifications from BotKube, run
 **@BotKube notifier stop**
-from the configured channel where BotKube is added. You will no longer receive notifications from the BotKube
+from the configured channel where BotKube is added. You will no longer receive notifications from the BotKube.
 
 ![notifier_stop](/images/notifier_stop.png)
 ![notifier_stop](/images/mm_notifier_stop.png)
 
 #### Enable notifications
 
-If you want to receice notifications from BotKube again, run
+If you want to receive notifications from BotKube again, run
 **@BotKube notifier start**
 from the configured channel where BotKube is added.
 
