@@ -1,7 +1,7 @@
 ---
 id: kubectl
 title: Kubectl
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 The Botkube Kubectl executor plugin allows you to run the `kubectl` command directly in the chat window of each communication platform.

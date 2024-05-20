@@ -1,7 +1,7 @@
 ---
 id: kubectl
 title: "Kubectl"
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 Botkube allows you to execute `kubectl` commands on your Kubernetes cluster. By default, kubectl command execution is disabled. See the [**Enabling plugin**](../../configuration/executor/kubectl.md#enabling-plugin) section from the `kubectl` configuration documentation.
