@@ -13,4 +13,3 @@ Botkube is introducing new plugins with advanced functionality that will be part
 As part of this change, some of the existing Botkube plugins are being moved to a new repository. This repository requires authentication with a Botkube account. To continue using these Botkube plugins, create an account at https://app.botkube.io/ and configure a Botkube instance, or [migrate an existing installation with the Botkube CLI](../../cli/migrate.md).
 
 :::
-

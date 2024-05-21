@@ -41,17 +41,41 @@ You can enable the plugin as a part of Botkube instance configuration.
 5. Select the AI plugin.
 6. Click **Save** button.
 
-## Configuration options
+## Configuration
 
 Currently, the AI plugin doesn't have any configuration options.
 
 ## Usage
 
-### AI Help
+Learn how to use the AI plugin.
+
+### Highlights
+
+To see the AI assistant in action, watch the video:
+
+import ReactPlayer from "react-player";
+
+<ReactPlayer controls url="https://www.youtube.com/watch?v=VzXUL7rch-4" />
+
+### AI Help for Kubernetes events
 
 Click on the **AI Help** button to get an analysis of the event.
 
 ![AI Help](assets/ai-help-usage.png "AI Help")
+
+### AI questions and instructions
+
+To ask the Botkube AI Assistant any question, use the `@Botkube ai` command prefix.
+
+Here are a few examples to get you started:
+
+- `@Botkube ai are my pods in default namespace up and running?`
+- `@Botkube ai how many nodes are there?`
+- `@Botkube ai output a yaml for Kubernetes pod with nginx image`
+- `@Botkube what's the current Botkube status?`
+- `@Botkube ai what's the difference between Botkube sources and executors?`
+- `@Botkube ai what Botkube plugins are available to install? List all of them with one sentence description and link to the docs.`
+- `@Botkube ai who's the Botkube maintainer?`
 
 ## Limitations
 

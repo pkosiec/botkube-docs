@@ -1,5 +1,5 @@
 ---
-id: plugin
+id: plugin-development
 title: "Plugin Development"
 sidebar_position: 6
 ---
