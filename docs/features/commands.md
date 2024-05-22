@@ -1,30 +1,12 @@
 ---
-id: executor
-title: "Executor"
+id: commands
+title: "Commands"
 sidebar_position: 1
 ---
 
 While deploying Botkube, you can specify which [executors](../../configuration/executor) you want to enable.
 
 To check which executors are enabled, and get the aliases configured for them, run `@Botkube list executors`.
-
-## Aliases
-
-Alias is a shortcut for a longer command or just a part of it. It can be defined for all commands, including executor plugins and built-in Botkube commands. When you use an alias, the command is replaced with the underlying command before executing it. For example, `@Botkube k get pods` is replaced with `@Botkube kubectl get pods` before executing it.
-
-Once you configured aliases, you can use them interchangeably with a full command. For example:
-
-- `k` as `kubectl`,
-- `kgp` as `kubectl get pods`,
-- `kgpa` as `kubectl get pods -A`,
-- `hh` as `helm history`,
-- `a` as `list actions`, the built-in Botkube command,
-
-and so on. Your imagination is the limit!
-
-Aliases are defined globally for the whole Botkube installation. To see which aliases are available for current conversation, run `@Botkube list aliases`.
-
-To learn how to configure aliases and see the default configuration, see the [Alias](../../features/alias.md) section.
 
 ## Specify cluster name
 
@@ -46,7 +28,3 @@ Use the `--filter` flag to filter the output of Botkube executor commands. This 
 
 The `--filter` flag uses simple string matching. And, only works for Botkube executor commands that return text output, e.g. `kubectl` or `list executors` commands.
 
-### Filtering `kubectl` output
-
-![flag_filter_kubectl_get_nodes](../assets/flag_filter_kubectl_get_nodes.png)
-![flag_filter_kubectl_logs](../assets/flag_filter_kubectl_logs.png)

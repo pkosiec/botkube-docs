@@ -1,5 +1,5 @@
 ---
-id: aliases
+id: command-aliases
 title: Command Aliases
 sidebar_position: 4
 ---

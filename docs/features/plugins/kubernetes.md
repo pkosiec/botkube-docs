@@ -19,7 +19,7 @@ plugins:
       url: https://github.com/kubeshop/botkube/releases/download/v1.11.0/plugins-index.yaml
 ```
 
-To enable Kubernetes source, add `--set 'sources.{configuration-name}.botkube/kubernetes.enabled=true'` to a given Botkube [`install` command](../cli/commands/botkube_install.md).
+To enable Kubernetes source, add `--set 'sources.{configuration-name}.botkube/kubernetes.enabled=true'` to a given Botkube [`install` command](../../clicommands/botkube_install.md).
 
 ### Botkube Cloud
 
