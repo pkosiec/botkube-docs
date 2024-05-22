@@ -78,7 +78,6 @@ List of the read-write commands:
   - By absolute URL: `helm install mynginx https://example.com/charts/nginx-1.2.3.tgz`
   - By chart reference and repository URL: `helm install --repo https://example.com/charts/ mynginx nginx`
 
-
 ## Configuration
 
 The plugin supports the following configuration:

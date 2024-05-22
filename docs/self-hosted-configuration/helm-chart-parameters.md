@@ -4,6 +4,13 @@ title: Helm chart parameters
 sidebar_position: 8
 ---
 
+:::info
+
+This document is applicable only for self-hosted installations.
+For Botkube Cloud installations, the Botkube Agent configuration is managed via the [Botkube Cloud dashboard](https://app.botkube.io).
+
+:::
+
 ![Version: v1.11.0](https://img.shields.io/badge/Version-v1.11.0-informational?style=flat-square) ![AppVersion: v1.11.0](https://img.shields.io/badge/AppVersion-v1.11.0-informational?style=flat-square)
 
 A virtual SRE, powered by AI.

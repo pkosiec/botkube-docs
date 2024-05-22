@@ -4,7 +4,7 @@ title: "Quick start"
 sidebar_position: 1
 ---
 
-Botkube provides a quick start repository to start developing Botkube [source](../architecture/index.md#source) and [executor](../architecture/index.md#executor) plugins in Go. It has all batteries included; example plugins:
+Botkube provides a quick start repository to start developing Botkube [source](../../architecture/index.md#source) and [executor](../../architecture/index.md#executor) plugins in Go. It has all batteries included; example plugins:
 
 - The [`echo`](https://github.com/kubeshop/botkube-plugins-template/blob/main/cmd/echo/main.go) executor that sends back the command that was specified,
 - The [`ticker`](https://github.com/kubeshop/botkube-plugins-template/blob/main/cmd/ticker/main.go) source that emits an event each time the configured time duration elapses,
@@ -21,7 +21,7 @@ and two example release jobs:
 
 2. Click **"Use this template"**, next **"Create a new repository"**
 
-   ![Create Repo](./assets/use-tpl.png)
+   ![Create Repo](assets/use-tpl.png)
 
    This creates your own plugin repository with a single commit.
 

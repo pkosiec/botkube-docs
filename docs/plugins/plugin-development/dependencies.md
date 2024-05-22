@@ -79,7 +79,7 @@ entries:
             url: https://dl.k8s.io/release/v1.28.1/bin/linux/arm64/kubectl
 ```
 
-Read how to use the plugin index in the [Repository](./repository.md) document.
+Read how to use the plugin index in the [Repository](repository.md) document.
 
 ## Using dependencies
 

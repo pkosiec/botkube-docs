@@ -12,9 +12,9 @@ Source is a binary that implements the [source](https://github.com/kubeshop/botk
 
 This tutorial shows you how to build a custom `ticker` source that emits an event at a specified interval.
 
-![ticker-demo](./assets/ticker-demo.gif)
+![ticker-demo](assets/ticker-demo.gif)
 
-For a final implementation, see the [Botkube template repository](./quick-start.md).
+For a final implementation, see the [Botkube template repository](quick-start.md).
 
 ## Prerequisites
 
@@ -94,7 +94,7 @@ For a final implementation, see the [Botkube template repository](./quick-start.
 
    The `Metadata` method returns basic information about your plugin. This data is used when the plugin index is generated in an automated way. You will learn more about that in the next steps.
 
-   Ąs a part of the `Metadata` method, you can define the plugin dependencies. To learn more about them, see the [Dependencies](./dependencies.md) document.
+   Ąs a part of the `Metadata` method, you can define the plugin dependencies. To learn more about them, see the [Dependencies](dependencies.md) document.
 
 6. Add the required `Stream` method:
 
@@ -270,4 +270,4 @@ sources:
         interval: 2m
 ```
 
-This means that two different `botkube/ticker` plugin configurations were bound to the `all-teams` Slack channel. For each bound configuration [Botkube source dispatcher](../architecture/index.md#plugin-source-bridge) calls `Stream` method with the configuration specified under the `bindings.sources` property.
+This means that two different `botkube/ticker` plugin configurations were bound to the `all-teams` Slack channel. For each bound configuration [Botkube source dispatcher](../../architecture/index.md#plugin-source-bridge) calls `Stream` method with the configuration specified under the `bindings.sources` property.

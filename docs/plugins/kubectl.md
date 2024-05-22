@@ -37,7 +37,6 @@ plugins:
 
 To enable Kubectl executor, add ``--set 'executors.k8s-default-tools.botkube/kubectl.enabled=true'` to a given Botkube [`install` command](../../cli/commands/botkube_install.md).
 
-
 ## Usage
 
 To execute the `kubectl` commands, send message in following format in the channel where Botkube is already added:
@@ -81,7 +80,6 @@ Keep in mind that the interactive command builder may not support all the comman
 - For resources that are namespace-scoped, under namespaces' dropdown, we display `interactiveBuilder.allowed.namespaces` if defined. If static namespaces are not specified, plugin needs to have access to fetch all Namespaces, otherwise Namespace dropdown won't be visible at all.
 
 - The `kubectl` command preview is displayed only if the command that you built is valid, and you have permission to run it.
-
 
 ## Configuration
 

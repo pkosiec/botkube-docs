@@ -4,6 +4,13 @@ title: "Communication"
 sidebar_position: 1
 ---
 
+:::info
+
+This document is applicable only for self-hosted installations.
+For Botkube Cloud installations, the Botkube Agent configuration is managed via the [Botkube Cloud dashboard](https://app.botkube.io).
+
+:::
+
 The communication settings contain:
 
 - Configuration for communication platforms scoped in separate communication groups,

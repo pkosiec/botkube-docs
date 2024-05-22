@@ -4,6 +4,13 @@ title: "Tokens from Vault via CSI driver"
 sidebar_position: 1
 ---
 
+:::info
+
+This document is applicable only for self-hosted installations.
+For Botkube Cloud installations, the Botkube Agent configuration, along with all secrets, are managed via the [Botkube Cloud dashboard](https://app.botkube.io).
+
+:::
+
 This tutorial shows how to install Botkube which takes the configuration from Vault instance.
 
 ## Prerequisites

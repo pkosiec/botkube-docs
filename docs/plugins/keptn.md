@@ -35,7 +35,6 @@ Once it is enabled, Botkube Keptn plugin will consume Keptn events and send them
 
 ![Keptn Events](assets/keptn-events.png)
 
-
 ## Configuration Syntax
 
 This plugin supports the following configuration:

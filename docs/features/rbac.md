@@ -133,7 +133,7 @@ executors:
 
 When configuring plugin on Botkube Cloud, the "Default" permissions mean that the `botkube-plugins-default` group will be used, which have read-only access to Kubernetes API and is configured during Botkube installation. See the [Default configuration](#default-configuration) section.
 
-![Cloud RBAC defaults](./assets/cloud-rbac-default.png)
+![Cloud RBAC defaults](assets/cloud-rbac-default.png)
 
 ## Examples
 

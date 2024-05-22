@@ -12,7 +12,7 @@ In this guide, we describe how interactivity applies to messages, and show you h
 For an example implementation, see the [`msg` executor source-code](https://github.com/kubeshop/botkube-plugins-template/blob/main/cmd/msg/main.go).
 :::
 
-![demo](./assets/demo-msg.gif)
+![demo](assets/demo-msg.gif)
 
 ## Primitives
 
@@ -59,10 +59,10 @@ msg := api.Message{
 When a button is clicked, Botkube runs an associated command. For **Run act1** it's `msg buttons act1`. If there is a plugin named `msg` and it is enabled on a given channel, it will be called by Botkube with a given command string. As a result, you can parse input command and return proper output.
 
 If you use only `ForCommandWithoutDesc`, all buttons are render in the same line.
-![btns-desc](./assets/btns-desc.png)
+![btns-desc](assets/btns-desc.png)
 
 Otherwise, each button is rendered in new line with the description on the left side and button on the right side.
-![btns-inline](./assets/btns-inline.png)
+![btns-inline](assets/btns-inline.png)
 
 ### Dropdowns
 

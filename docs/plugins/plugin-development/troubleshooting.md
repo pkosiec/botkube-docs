@@ -71,7 +71,7 @@ ERRO[2023-01-09T21:21:25+01:00] plugin process exited                         er
 
 **Solution**
 
-It means that your plugin exited once it was started by Botkube [plugin manager](../architecture/index.md#plugin-manager). To start your plugin again, you need to restart the Botkube core process, as crashed plugins aren't restarted automatically. This issue is tracked in [botkube#878](https://github.com/kubeshop/botkube/issues/878). You need to make sure that our plugin doesn't exit once it's started. You should return each error on Botkube plugin interface, instead of crashing your application. To see your plugin standard output [set the `debug` for a given plugin](debug.md).
+It means that your plugin exited once it was started by Botkube [plugin manager](../../architecture/index.md#plugin-manager). To start your plugin again, you need to restart the Botkube core process, as crashed plugins aren't restarted automatically. This issue is tracked in [botkube#878](https://github.com/kubeshop/botkube/issues/878). You need to make sure that our plugin doesn't exit once it's started. You should return each error on Botkube plugin interface, instead of crashing your application. To see your plugin standard output [set the `debug` for a given plugin](debug.md).
 
 ### Plugin not found error
 

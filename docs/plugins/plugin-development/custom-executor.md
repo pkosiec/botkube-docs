@@ -12,9 +12,9 @@ Plugin executor is a binary that implements the [executor](https://github.com/ku
 
 This tutorial shows you how to build a custom `echo` executor that responds with a command that was specified by the user in a chat window.
 
-![echo-demo](./assets/echo-demo.gif)
+![echo-demo](assets/echo-demo.gif)
 
-For a final implementation, see the [Botkube template repository](./quick-start.md).
+For a final implementation, see the [Botkube template repository](quick-start.md).
 
 ## Prerequisites
 
@@ -107,7 +107,7 @@ For a final implementation, see the [Botkube template repository](./quick-start.
 
    The `Metadata` method returns basic information about your plugin. This data is used when the plugin index is generated in an automated way. You will learn more about that in the next steps.
 
-   Ąs a part of the `Metadata` method, you can define the plugin dependencies. To learn more about them, see the [Dependencies](./dependencies.md) document.
+   Ąs a part of the `Metadata` method, you can define the plugin dependencies. To learn more about them, see the [Dependencies](dependencies.md) document.
 
 6. Add the required `Execute` method:
 
@@ -121,7 +121,7 @@ For a final implementation, see the [Botkube template repository](./quick-start.
    ```
 
    The `Execute` method is the heart of your executor plugin. This method runs your business logic and returns the execution output. Next, the Botkube core sends back the response to a given communication platform.
-   If the communication platform supports interactivity, you can construct and return interactive messages containing buttons, dropdowns, input text, and more complex formatting. To learn more about it, see the [Interactive Messages](./interactivity.md) guide.
+   If the communication platform supports interactivity, you can construct and return interactive messages containing buttons, dropdowns, input text, and more complex formatting. To learn more about it, see the [Interactive Messages](interactivity.md) guide.
 
    For each `Execute` method call, Botkube attaches the list of associated configurations. You will learn more about that in the [**Passing configuration to your plugin**](#passing-configuration-to-your-plugin) section.
 
