@@ -24,7 +24,7 @@ and so on. Your imagination is the limit!
 
 Aliases are defined globally for the whole Botkube installation. To see which aliases are available for current conversation, run `@Botkube list aliases`.
 
-To learn how to configure aliases and see the default configuration, see the [Alias](../../configuration/alias.md) section.
+To learn how to configure aliases and see the default configuration, see the [Alias](../../features/alias.md) section.
 
 ## Specify cluster name
 

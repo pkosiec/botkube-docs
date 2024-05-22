@@ -36,7 +36,7 @@ You can enable the plugin as a part of Botkube instance configuration.
 
 Once it is enabled, Botkube Kubernetes plugin will consume Kubernetes events and send them to configured platforms as shown below.
 
-![Pod Created](../../plugins/assets/pod-created.png)
+![Pod Created](assets/pod-created.png)
 
 ## Event and resource constraints
 

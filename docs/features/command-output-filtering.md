@@ -1,6 +1,6 @@
 ---
-id: interactive-output-filtering
-title: "Interactive output filtering"
+id: command-output-filtering
+title: "Command Output Filtering"
 sidebar_position: 4
 ---
 
@@ -14,7 +14,7 @@ This issue is tracked in [botkube#907](https://github.com/kubeshop/botkube/issue
 :::
 
 Sometimes you can get long response from a certain command and you may want to filter that to see a subset of the actual result.
-For each communication platform, you can use the `--filter` flag at the end of your command. To learn more, see the [Flags](executor/index.md#filtering-kubectl-output) section.
+For each communication platform, you can use the `--filter` flag at the end of your command. To learn more, see the [Flags](../usage/executor/index.md#filtering-kubectl-output) section.
 
 If you use the [Slack integration](../installation/slack/index.md) that supports interactive messages, there is another option to handle that: interactive output filtering.
 Interactivity is achieved via an input action text box where you can add your filter criteria as text and press the **Enter** button.

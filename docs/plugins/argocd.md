@@ -100,11 +100,11 @@ defaultSubscriptions:
 
 ## Usage
 
-Botkube allows you to consume ArgoCD events on your Kubernetes cluster. By default, `argocd` plugin is disabled. See the [**Enabling source**](../../plugins/argocd.md#enabling-source) section from the `argocd` configuration documentation.
+Botkube allows you to consume ArgoCD events on your Kubernetes cluster.
 
 Once it is enabled, the ArgoCD plugin will configure ArgoCD notifications so that Botkube receives them on its incoming webhook. Then, Botkube will send them to configured platforms as shown below.
 
-![ArgoCD events](../../plugins/assets/argocd-events.png)
+![ArgoCD events](assets/argocd-events.png)
 
 ## Interactive events
 
@@ -116,7 +116,7 @@ For platforms that support interactivity, such as Slack and Microsoft Teams, Bot
 - View the Application in the ArgoCD UI
 - Open the source repository in the browser
 
-Interactive buttons and commands can be configured. See the [Configuration](../../plugins/argocd.md) document for more details.
+Interactive buttons and commands can be configured. See the [Configuration](#configuration-syntax) section for more details.
 
 ## Cleanup
 

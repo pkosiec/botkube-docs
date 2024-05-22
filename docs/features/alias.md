@@ -1,12 +1,12 @@
 ---
-id: alias
-title: Alias
+id: aliases
+title: Command Aliases
 sidebar_position: 4
 ---
 
 Botkube can define multiple aliases for arbitrary commands. The aliases are replaced with the underlying command before executing it. Aliases can replace a single word or multiple ones. For example, you can define a `k` alias for `kubectl`, or `kgp` for `kubectl get pods`.
 
-Aliases work for all commands, including executor plugins and Botkube built-in ones. To learn more about how to configure Executors, see the [Executor](./executor/index.md) section.
+Aliases work for all commands, including executor plugins and Botkube built-in ones. To learn more about how to configure Executors, see the [Executor](../configuration/executor/index.md) section.
 
 Aliases are defined globally for the whole Botkube installation. Once they are configured, read the [Aliases](../usage/executor/index.md#aliases) section in Usage document.
 
@@ -48,3 +48,20 @@ aliases:
 ```
 
 The default configuration for Helm chart can be found in the [values.yaml](https://github.com/kubeshop/botkube/blob/main/helm/botkube/values.yaml) file.
+
+
+## Examples
+
+Alias is a shortcut for a longer command or just a part of it. It can be defined for all commands, including executor plugins and built-in Botkube commands. When you use an alias, the command is replaced with the underlying command before executing it. For example, `@Botkube k get pods` is replaced with `@Botkube kubectl get pods` before executing it.
+
+Once you configured aliases, you can use them interchangeably with a full command. For example:
+
+- `k` as `kubectl`,
+- `kgp` as `kubectl get pods`,
+- `kgpa` as `kubectl get pods -A`,
+- `hh` as `helm history`,
+- `a` as `list actions`, the built-in Botkube command,
+
+and so on. Your imagination is the limit!
+
+Aliases are defined globally for the whole Botkube installation. To see which aliases are available for current conversation, run `@Botkube list aliases`.

@@ -33,7 +33,7 @@ You can enable the plugin as a part of Botkube instance configuration.
 
 Once it is enabled, Botkube Prometheus plugin will consume Prometheus alerts and send them to configured platforms as shown below.
 
-![Prometheus Alerts](../../plugins/assets/prometheus-alerts.png)
+![Prometheus Alerts](assets/prometheus-alerts.png)
 
 ## Configuration Syntax
 

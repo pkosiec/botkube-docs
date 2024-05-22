@@ -33,7 +33,7 @@ You can enable the plugin as a part of Botkube instance configuration.
 
 Once it is enabled, Botkube Keptn plugin will consume Keptn events and send them to configured platforms as shown below.
 
-![Keptn Events](../../plugins/assets/keptn-events.png)
+![Keptn Events](assets/keptn-events.png)
 
 
 ## Configuration Syntax
