@@ -1,9 +1,7 @@
 ---
 id: cloud-teams
-title: "Cloud Teams connections overview"
+title: "Botkube app for Microsoft Teams"
 ---
-
-# Cloud Teams connections overview
 
 This document describes the communication between the Botkube Cloud control-plane and the Botkube Agent configured with the Cloud Teams platform enabled.
 

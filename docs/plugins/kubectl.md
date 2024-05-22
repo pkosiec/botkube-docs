@@ -1,7 +1,7 @@
 ---
 id: kubectl
 title: Kubectl
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 ## Introduction

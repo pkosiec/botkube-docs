@@ -1,7 +1,7 @@
 ---
 id: github-events
 title: GitHub Events
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 :::info

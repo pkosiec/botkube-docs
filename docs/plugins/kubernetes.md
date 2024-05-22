@@ -1,7 +1,7 @@
 ---
 id: kubernetes
 title: Kubernetes
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 A `kubernetes` source plugin produces events for configured Kubernetes resources. These events can be sent to communication channels or actions. To learn how to bind sources to communication channels or actions, read the Communication and Action documents.
