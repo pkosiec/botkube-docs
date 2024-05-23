@@ -4,15 +4,15 @@ title: Kubectl
 sidebar_position: 2
 ---
 
-## Introduction
-
 The Kubectl executor plugin allows you to run the `kubectl` command directly in the communication platform.
+
+## Get started
 
 By default, just the read-only `kubectl` commands are supported. For enabling commands that require create, update or delete rules, you need to create specific (Cluster)Role and (Cluster)RoleBinding and reference it in the RBAC configuration. To learn more, refer to the [RBAC section](../features/rbac.md).
 
-## How to enable the plugin
+### Enable the plugin
 
-### Botkube Cloud
+#### Botkube Cloud
 
 You can enable the plugin as a part of Botkube instance configuration.
 
@@ -20,11 +20,10 @@ You can enable the plugin as a part of Botkube instance configuration.
 2. From the [Botkube Cloud homepage](https://app.botkube.io), click on a card of a given Botkube instance.
 3. Navigate to the platform tab which you want to configure.
 4. Click **Add plugin** button.
-5. Select the plugin.
-6. Bind the plugin to the selected channel(s).
-7. Click **Save** button.
+5. Select the Kubectl plugin.
+6. Click **Save** button.
 
-### Self-hosted Botkube installation
+#### Self-hosted Botkube installation
 
 The Kubectl plugin is hosted by the official Botkube plugin repository. First, make sure that the `botkube` repository is defined under `plugins` in the [values.yaml](https://github.com/kubeshop/botkube/blob/main/helm/botkube/values.yaml) file.
 
@@ -47,7 +46,7 @@ To execute the `kubectl` commands, send message in following format in the chann
 
 ### Aliases
 
-By default, `k` and `kc` are configured as aliases for the `kubectl` command. You can use them on par with the `kubectl` command. To read more about aliases configuration, see the [Alias](../features/commands.md#command-aliases) section.
+By default, `k` and `kc` are configured as aliases for the `kubectl` command, for both Botkube Cloud and self-hosted Botkube installations. You can use them on par with the `kubectl` command. To read more about aliases configuration, see the [Alias](../features/commands.md#command-aliases) section.
 
 ### Interactive kubectl commands builder
 

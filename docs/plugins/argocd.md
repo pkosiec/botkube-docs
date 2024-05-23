@@ -5,13 +5,7 @@ sidebar_position: 8
 ---
 
 :::info
-
-**This plugin is available as a part of the Botkube Cloud offering.**
-
-Botkube is introducing new plugins with advanced functionality that will be part of the Botkube Team and Enterprise packages. These advanced plugins require cloud services provided by Botkube and are not part of the Botkube open source software.
-
-As part of this change, some of the existing Botkube plugins are being moved to a new repository. This repository requires authentication with a Botkube account. To continue using these Botkube plugins, create an account at https://app.botkube.io/ and configure a Botkube instance, or [migrate an existing installation with the Botkube CLI](../cli/migrate.md).
-
+**This plugin is hosted by the [Botkube Cloud](https://app.botkube.io) plugin repository and requires active Botkube Cloud account.**
 :::
 
 ArgoCD source plugin sends events from ArgoCD to configured communication platforms. During startup, the plugin configures ArgoCD webhooks, triggers, templates and subscriptions based on the [ArgoCD Notification Catalog](https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/catalog/).
@@ -19,7 +13,9 @@ It uses native [ArgoCD notifications](https://argo-cd.readthedocs.io/en/stable/o
 
 The ArgoCD source plugin is hosted by the Botkube Cloud plugin repository and requires active Botkube Cloud account.
 
-## Prerequisite elevated RBAC permissions
+## Get started
+
+### 1. Prepare elevated RBAC permissions
 
 ArgoCD plugin requires specific RBAC permissions.
 First, create RBAC resources on your cluster:
@@ -60,12 +56,12 @@ Next, use the `argocd` static group name in the plugin RBAC configuration:
 
 ![ArgoCD RBAC](assets/argocd-rbac.png)
 
-## Enabling plugin
+### 2. Enable the plugin
 
 :::note
 In order to enable the plugin, ArgoCD has to be already installed on the cluster and all watched Applications need to be created.
 
-Also, remember to create RBAC resources for the plugin. See the [Elevated RBAC permissions required](#elevated-rbac-permissions-required)) section.
+Also, remember to create RBAC resources for the plugin. See the [Prepare elevated RBAC permissions](#1-prepare-elevated-rbac-permissions) section.
 :::
 
 You can enable the plugin as a part of Botkube instance configuration.
@@ -75,8 +71,8 @@ You can enable the plugin as a part of Botkube instance configuration.
 3. Navigate to the platform tab which you want to configure.
 4. Click **Add plugin** button.
 5. Select the ArgoCD plugin.
-6. Click **Save** button.
-7. Provide at least one ArgoCD application name and namespace in the configuration.
+6. Provide at least one ArgoCD application name and namespace in the configuration.
+7. Click **Save** button.
 
 ```yaml
 defaultSubscriptions:

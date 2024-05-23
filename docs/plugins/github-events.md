@@ -5,20 +5,14 @@ sidebar_position: 6
 ---
 
 :::info
-
-**This plugin is available as a part of the Botkube Cloud offering.**
-
-Botkube is introducing new plugins with advanced functionality that will be part of the Botkube Team and Enterprise packages. These advanced plugins require cloud services provided by Botkube and are not part of the Botkube open source software.
-
-As part of this change, some of the existing Botkube plugins are being moved to a new repository. This repository requires authentication with a Botkube account. To continue using these Botkube plugins, create an account at https://app.botkube.io/ and configure a Botkube instance, or [migrate an existing installation with the Botkube CLI](../cli/migrate.md).
-
+**This plugin is hosted by the [Botkube Cloud](https://app.botkube.io) plugin repository and requires active Botkube Cloud account.**
 :::
 
-The GitHub Events source sends events for configured GitHub repositories. These events can be sent to communication channels or actions. To learn how to bind sources to communication channels or actions, refer to the [Communication](../self-hosted-configuration/communication/index.md) and [Action](../self-hosted-configuration/action.md) documents.
+The GitHub Events source sends events for configured GitHub repositories. These events can be sent to communication channels or actions.
 
-The GitHub Events plugin is hosted by the Botkube Cloud plugin repository and requires active Botkube Cloud account.
+## Get started
 
-## Enabling plugin
+### Enable the plugin
 
 You can enable the plugin as a part of Botkube instance configuration.
 
@@ -29,7 +23,9 @@ You can enable the plugin as a part of Botkube instance configuration.
 5. Select the GitHub Events plugin.
 6. Click **Save** button.
 
-## Configuration Syntax
+## Configuration
+
+### Syntax
 
 This plugin supports the following configuration:
 
@@ -126,16 +122,16 @@ repositories:
                 style: primary
 ```
 
-## Authorization
+### Authentication
 
 You can use either a [personal access token](#github-personal-access-token) or a [GitHub App](#github-app) for authentication.
 By using GitHub Apps, you can increase your maximum rate limits because multiple GitHub Apps are independent and do not share the rate limits. However, using multiple Personal Access Tokens (PATs) for the same account will result in sharing the same rate limit.
 
-### GitHub personal access token
+#### GitHub personal access token
 
 Follow the instructions [here](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token) to create a token. The required scope differs for public and private repositories.
 
-### GitHub App
+#### GitHub App
 
 To use a GitHub App:
 
@@ -150,7 +146,7 @@ To use a GitHub App:
    | GitHub App ID              | Found in the app's "About" page (Organization settings -> Developer settings -> Edit button on your app).                                                                                                                                         |
    | GitHub App Installation ID | Found in the URL your organization's app install page (Organization settings -> Github Apps -> Configure button on your app). It's the last number in the URL, ex: `https://github.com/organizations/{my-org}/settings/installations/1234567890`. |
 
-## Subscriptions
+### Subscriptions
 
 The GitHub Events source plugin uses polling instead of Webhook endpoint for retrieving GitHub events. It calls two types of GitHub REST API endpoints with a configured refresh time window:
 
@@ -159,11 +155,9 @@ The GitHub Events source plugin uses polling instead of Webhook endpoint for ret
 
 By default, we use [conditional requests](https://docs.github.com/en/rest/overview/resources-in-the-rest-api?apiVersion=2022-11-28#conditional-requests) to prevent excessive API calls. As a result, from `on.pullRequests` triggers may have up to a 60-second delay due to caching.
 
-### Pull requests
+#### Pull requests
 
 For a configured `refreshDuration` we call the [`/repos/{owner}/{repo}/pulls`](https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28#list-pull-requests) endpoint for all registered repositories. It's configured to fetch 100 pull requests that were recently modified. We ignore all events that were already processed.
-
-#### Matching criteria
 
 If no matching criteria are specified, all pull requests will be reported. For example:
 
@@ -186,7 +180,7 @@ To narrow down emitted events, you can specify at least one of the available cri
 
 - `labels.exclude`: This is a list of label patterns for which the event should not be triggered. It supports [Go regular expressions](https://github.com/google/re2/wiki/Syntax). For example: `['bug']`. This exclusion criteria takes precedence over `labels.include`.
 
-#### Templating
+### Notification Template
 
 You can customize the notification template with additional buttons:
 

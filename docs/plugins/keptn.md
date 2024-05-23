@@ -5,20 +5,14 @@ sidebar_position: 9
 ---
 
 :::info
-
-**This plugin is available as a part of the Botkube Cloud offering.**
-
-Botkube is introducing new plugins with advanced functionality that will be part of the Botkube Team and Enterprise packages. These advanced plugins require cloud services provided by Botkube and are not part of the Botkube open source software.
-
-As part of this change, some of the existing Botkube plugins are being moved to a new repository. This repository requires authentication with a Botkube account. To continue using these Botkube plugins, create an account at https://app.botkube.io/ and configure a Botkube instance, or [migrate an existing installation with the Botkube CLI](../cli/migrate.md).
-
+**This plugin is hosted by the [Botkube Cloud](https://app.botkube.io) plugin repository and requires active Botkube Cloud account.**
 :::
 
 The Botkube Keptn source plugin allows you to consume events from Keptn deployment and notify in configured platforms.
 
-The Keptn plugin is hosted by the Botkube Cloud plugin repository and requires active Botkube Cloud account.
+## Get started
 
-## Enabling plugin
+### Enable the plugin
 
 You can enable the plugin as a part of Botkube instance configuration.
 
@@ -35,7 +29,7 @@ Once it is enabled, Botkube Keptn plugin will consume Keptn events and send them
 
 ![Keptn Events](assets/keptn-events.png)
 
-## Configuration Syntax
+## Configuration
 
 This plugin supports the following configuration:
 

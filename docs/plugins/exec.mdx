@@ -8,8 +8,6 @@ sidebar_position: 3
 **This plugin is hosted by the [Botkube Cloud](https://app.botkube.io) plugin repository and requires active Botkube Cloud account.**
 :::
 
-## Introduction
-
 The `exec` executor plugin allows you to install and run CLI applications directly from chat (e.g., Slack, Microsoft Teams, Discord, or Mattermost) without any hassle.
 
 It supports interactivity in the form of buttons and dropdowns. You can easily use all your favorite tools without typing, even from your mobile phone!
@@ -17,14 +15,16 @@ It supports interactivity in the form of buttons and dropdowns. You can easily u
 ![x-demo](./assets/demo-x.gif)
 
 :::note
-To shorten the command, the `x` alias is used in all examples. Make sure you have it configured for your Botkube installation according to [Alias configuration](../../configuration/alias) document.
+To shorten the command, the `x` alias is used in all examples. Make sure you have it configured for your Botkube installation according to [Alias configuration](../features/commands.md#command-aliases) section.
 
 In this context, the `x` stands for `extension` or `execution`.
 :::
 
-By default, the read-only `KUBECONFIG` is assigned. For enabling commands that require create, update or delete rules, you need to create specific (Cluster)Role and (Cluster)RoleBinding and reference it from plugin's `context` configuration. To learn more refer to the [RBAC section](../rbac.md).
+## Get started
 
-## How to enable the plugin
+By default, the read-only `KUBECONFIG` is assigned. For enabling commands that require create, update or delete rules, you need to create specific (Cluster)Role and (Cluster)RoleBinding and reference it from plugin's RBAC configuration. To learn more refer to the [RBAC section](../rbac.md).
+
+## Enable the plugin
 
 You can enable the plugin as a part of Botkube instance configuration.
 
@@ -133,7 +133,7 @@ traefik-crd	kube-system	1       	2023-04-19 20:58:56.564578223 +0000 UTC	deploye
 
 is displayed as:
 
-![](./assets/parsed-space-table.png)
+![parsed space table](./assets/parsed-space-table.png)
 
 The table output is parsed with the following rules:
 

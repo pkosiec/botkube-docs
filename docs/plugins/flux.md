@@ -8,13 +8,11 @@ sidebar_position: 7
 **This plugin is hosted by the [Botkube Cloud](https://app.botkube.io) plugin repository and requires active Botkube Cloud account.**
 :::
 
-## Introduction
-
 The Botkube Flux executor plugin allows you to run the [`flux`](https://fluxcd.io/) CLI commands directly within the chat window of your chosen communication platform.
 
-The Flux plugin is hosted by the Botkube Cloud plugin repository and requires active Botkube Cloud account.
+## Get started
 
-## Prerequisite elevated RBAC permissions
+### 1. Prepare elevated RBAC permissions
 
 One of the plugin capabilities is the `flux diff` command. To use it, you need to update the Flux plugin RBAC configuration. This is necessary because the command performs a server-side dry run that requires patch permissions, as specified in the [Kubernetes documentation](https://kubernetes.io/docs/reference/using-api/api-concepts/#dry-run-authorization).
 
@@ -53,7 +51,7 @@ Next, use the `flux` group in the plugin RBAC configuration:
 
 ![Flux RBAC](./assets/flux-rbac.png)
 
-## Enabling plugin
+### 2. Enable the plugin
 
 You can enable the plugin as a part of Botkube instance configuration.
 
@@ -65,35 +63,19 @@ You can enable the plugin as a part of Botkube instance configuration.
 6. Click **Configure** button and then **Configuration as Code** tab.
 7. Configure optional GitHub access token.
 
-The Flux plugin comes with integrated GitHub support. To enable it, you'll need a valid [GitHub token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token). Set the token with the following configuration:
+   The Flux plugin comes with integrated GitHub support. To enable it, you'll need a valid [GitHub token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token). Set the token with the following configuration:
 
-```yaml
-github:
-  auth:
-    accessToken: "" # your GitHub access token
-```
+   ```yaml
+   github:
+     auth:
+       accessToken: "" # your GitHub access token
+   ```
 
-6. Click **Save** button.
+8. Click **Save** button.
 
 By default, the Flux plugin has read-only access. To perform actions like creating or deleting Flux-related sources, you'll need to customize the [RBAC](../rbac.md#configuration).
 
-## Configuration Syntax
-
-The plugin supports the following configuration:
-
-```yaml
-github:
-  auth:
-    # GitHub access token.
-    # Instructions for token creation: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token.
-    # Lack of token may limit functionality, e.g., adding comments to pull requests or approving them.
-    accessToken: ""
-log:
-  level: "info"
-```
-
-Botkube offers seamless execution of Flux CLI commands within your Kubernetes cluster. By default, Flux command execution is disabled. To enable it, refer to the [
-**Enabling plugin**](../../configuration/executor/flux.md#enabling-plugin) section.
+## Usage
 
 To execute the `flux` CLI commands, send a message in the channel where Botkube is present. For example:
 
@@ -101,13 +83,13 @@ To execute the `flux` CLI commands, send a message in the channel where Botkube 
 @Botkube flux tutorial
 ```
 
-## Interactive Usage
+### Interactive Usage
 
-We have also incorporated interactivity (tables, etc.) to simplify running Flux CLI commands e.g. from mobile devices.
+The Flux plugin supports interactivity (tables, etc.) to simplify running Flux CLI commands e.g. from mobile devices.
 
 ![flux-interactivity](./assets/flux-interactivity.gif)
 
-## Simplified Kustomization Diffing Flow
+### Simplified Kustomization Diffing Flow
 
 With the Botkube Flux executor, you can execute a single command to perform a diff between a specific pull request and the cluster state. For instance:
 
@@ -133,7 +115,7 @@ The diff results are posted on the Slack channel, making it easy for team member
 
 ### GitHub automation
 
-To enhance your workflow's efficiency, you can use the [GitHub Events](../../configuration/source/github-events.md) source for automatic notification of pull request events, complete with an integrated `flux diff` button.
+To enhance your workflow's efficiency, you can use the [GitHub Events](./github-events.md) source for automatic notification of pull request events, complete with an integrated `flux diff` button.
 
 ```yaml
 github:
@@ -155,3 +137,18 @@ repositories:
 ```
 
 Don't forget to bind the plugin to one of the channels.
+
+## Configuration
+
+The plugin supports the following configuration:
+
+```yaml
+github:
+  auth:
+    # GitHub access token.
+    # Instructions for token creation: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/#creating-a-token.
+    # Lack of token may limit functionality, e.g., adding comments to pull requests or approving them.
+    accessToken: ""
+log:
+  level: "info"
+```

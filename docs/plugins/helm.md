@@ -10,11 +10,11 @@ sidebar_position: 4
 
 The Helm executor plugin allows you to run the `helm` command directly in the chat platform.
 
-The Helm plugin is hosted by the Botkube Cloud plugin repository and requires active Botkube Cloud account.
+## Get started
 
-By default, just the read-only `helm` commands are supported. For enabling commands that require create, update or delete rules, you need to create specific (Cluster)Role and (Cluster)RoleBinding and reference it in the RBAC configuration. To learn more, refer to the [RBAC section](../rbac.md).
+By default, just the read-only `helm` commands are supported. For enabling commands that require create, update or delete rules, you need to create specific (Cluster)Role and (Cluster)RoleBinding and reference it in the RBAC configuration. To learn more, refer to the [RBAC section](../features/rbac.md).
 
-## How to enable the plugin
+### Enable the plugin
 
 You can enable the plugin as a part of Botkube instance configuration.
 
@@ -32,14 +32,6 @@ To execute `helm` commands, send message in the following format in the channel 
 ```
 @Botkube helm [command] [flags]
 ```
-
-:::caution
-Using the interactive filter input field causes the Helm command to be re-executed. Be careful when using it for read-write commands.
-
-![Interactive Helm install filtering](./assets/helm-install-filter.png)
-
-This issue is tracked in [botkube#907](https://github.com/kubeshop/botkube/issues/907).
-:::
 
 ## Supported commands
 
@@ -89,7 +81,6 @@ defaultNamespace: "default"
 helmDriver: "secret"
 # Location for storing Helm configuration.
 helmConfigDir: "/tmp/helm/"
-config directory.
 # Location for storing Helm cache.
 helmCacheDir: "/tmp/helm/.cache"
 ```
