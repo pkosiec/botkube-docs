@@ -4,10 +4,8 @@ title: RBAC
 sidebar_position: 4
 ---
 
-Botkube allows plugins to access Kubernetes API by defining [RBAC](https://en.wikipedia.org/wiki/Role-based_access_control) rules as part of plugin `context.rbac` configuration. Kubeconfig generation needs to be requested by defining `context.rbac` property.
-
+Botkube allows plugins to access Kubernetes API by defining [RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac) rules.
 Based on this configuration Botkube generates a temporary [kubeconfig](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/) with user and/or group impersonation.
-This kubeconfig is available to plugins in the `Execute` and `Stream` contexts.
 
 ## Architecture
 
@@ -18,7 +16,17 @@ For executor plugins, the kubeconfig is generated every time a command is sent t
 
 ![diagram](assets/botkube-read-only.svg "diagram")
 
+This kubeconfig is available to plugins in the `Execute` and `Stream` methods, as long as the plugin has the `context.rbac` property defined.
+
 ## Configuration
+
+### Botkube Cloud
+
+In Botkube Cloud, the RBAC is configured within the "Permissions" tab for each plugin.
+
+![Cloud RBAC defaults](assets/cloud-rbac-default.png)
+
+### Self-hosted Botkube installation
 
 For each executor and source plugin, you can define a `context.rbac` configuration. This config is used to generate a dedicated kubeconfig.
 
@@ -147,7 +155,7 @@ You can use `rbac.groups` or `extraObjects` overrides during Botkube installatio
 
 In this example an executor plugin is defined with static RBAC that maps to group `read-pods`.
 
-1. Consider the following Botkube config:
+1. Consider the following self-hosted Botkube config:
 
    ```yaml
    # ...
@@ -198,7 +206,7 @@ In a result, when this executor plugin is invoked, Botkube generates a kubeconfi
 
 In this example a single source plugin is defined with static RBAC that maps to user `kubernetes-read-only`.
 
-1. Consider the following Botkube config:
+1. Consider the following self-hosted Botkube config:
 
    ```yaml
    sources:
@@ -246,7 +254,7 @@ In a result, the source plugin can access all Kubernetes resources with read-onl
 
 In this example **kubectl** executor plugin is configured with channel name mapping and bound to two channels, `ch-1` and `ch-2`. In Kubernetes RBAC resources, group `ch-1` is given write access, while group `ch-2` is given only read access.
 
-1. Consider the following Botkube config:
+1. Consider the following self-hosted Botkube config:
 
    ```yaml
    executors:
@@ -338,11 +346,18 @@ Botkube runs plugin processes in the same container within the same Pod. Therefo
 If you're a plugin developer and decide to write kubeconfig to the file system, be aware
 that it can be accessible by all plugins in the container.
 
+### Supported RBAC mappings
+
+While Executor plugins support multiple mapping types, there are the following limitations:
+
+- Source plugins support only the `Static` mapping.
+- Automated [actions](../usage/automated-actions.md) support only the `Static` mapping.
+
 ### RBAC configuration merging
 
 The same executor plugins with different RBAC configuration cannot be bound to the same channel. This is validated during Botkube startup and will result in an error.
 
-For example, the following configuration is invalid:
+For example, the following self-hosted Botkube configuration is invalid:
 
 ```yaml
 communications:
@@ -377,13 +392,6 @@ executors:
             static:
               value: kubectl-read-only
 ```
-
-### Supported RBAC mappings
-
-While Executor plugins support multiple mapping types, there are the following limitations:
-
-- Source plugins support only the `Static` mapping.
-- Automated [actions](../usage/automated-actions.md) support only the `Static` mapping.
 
 ## Troubleshooting
 
@@ -429,4 +437,4 @@ kubectl auth can-i get secret -n botkube --as botkube-internal-static-user --as-
 
 ## Plugin development
 
-If you are a plugin developer and want to learn how to use generated kubeconfig in the plugin codebase, refer to [Using kubeconfig](../plugin/using-kubeconfig.md) document.
+If you are a plugin developer and want to learn how to use generated kubeconfig in the plugin codebase, refer to [Using kubeconfig](../plugins/plugin-development/using-kubeconfig.md) document.

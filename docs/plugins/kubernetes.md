@@ -4,22 +4,11 @@ title: Kubernetes
 sidebar_position: 1
 ---
 
-A `kubernetes` source plugin produces events for configured Kubernetes resources. These events can be sent to communication channels or actions. To learn how to bind sources to communication channels or actions, read the Communication and Action documents.
+The Kubernetes source plugin produces events for configured Kubernetes resources. These events can be sent to communication channels or actions.
 
-## Enabling plugin
+## Get started
 
-### Self-hosted Botkube installation
-
-The Kubernetes plugin is hosted by the official Botkube plugin repository. First, make sure that the `botkube` repository is defined under `plugins` in the [values.yaml](https://github.com/kubeshop/botkube/blob/main/helm/botkube/values.yaml) file.
-
-```yaml
-plugins:
-  repositories:
-    botkube:
-      url: https://github.com/kubeshop/botkube/releases/download/v1.11.0/plugins-index.yaml
-```
-
-To enable Kubernetes source, add `--set 'sources.{configuration-name}.botkube/kubernetes.enabled=true'` to a given Botkube [`install` command](../../clicommands/botkube_install.md).
+### 1. Enable the plugin
 
 ### Botkube Cloud
 
@@ -32,11 +21,22 @@ You can enable the plugin as a part of Botkube instance configuration.
 5. Select the Kubernetes plugin.
 6. Click **Save** button.
 
+### Self-hosted Botkube installation
+
+The Kubernetes plugin is hosted by the official Botkube plugin repository. First, make sure that the `botkube` repository is defined under `plugins` in the [values.yaml](https://github.com/kubeshop/botkube/blob/main/helm/botkube/values.yaml) file.
+
+```yaml
+plugins:
+  repositories:
+    botkube:
+      url: https://github.com/kubeshop/botkube/releases/download/v1.11.0/plugins-index.yaml
+```
+
+To enable Kubernetes source, add `--set 'sources.{configuration-name}.botkube/kubernetes.enabled=true'` to a given Botkube [`install` command](../cli/commands/botkube_install.md).
+
 ## Usage
 
-Once it is enabled, Botkube Kubernetes plugin will consume Kubernetes events and send them to configured platforms as shown below.
-
-![Pod Created](assets/pod-created.png)
+Once the plugin is enabled, the Kubernetes plugin starts consuming Kubernetes events and send them to configured platforms.
 
 ## Event and resource constraints
 
