@@ -55,7 +55,7 @@ Next, use the `flux` group in the plugin RBAC configuration:
 
 You can enable the plugin as a part of Botkube instance configuration.
 
-1. If you don't have an existing Botkube instance, create a new one, according to the [Installation](../../installation/index.mdx) docs.
+1. If you don't have an existing Botkube instance, create a new one, according to the [Installation](../installation/index.mdx) docs.
 2. From the [Botkube Cloud homepage](https://app.botkube.io), click on a card of a given Botkube instance.
 3. Navigate to the platform tab which you want to configure.
 4. Click **Add plugin** button.
@@ -73,7 +73,7 @@ You can enable the plugin as a part of Botkube instance configuration.
 
 8. Click **Save** button.
 
-By default, the Flux plugin has read-only access. To perform actions like creating or deleting Flux-related sources, you'll need to customize the [RBAC](../rbac.md#configuration).
+By default, the Flux plugin has read-only access. To perform actions like creating or deleting Flux-related sources, you'll need to customize the [RBAC](../features/rbac.md).
 
 ## Usage
 

@@ -18,7 +18,7 @@ By default, just the read-only `helm` commands are supported. For enabling comma
 
 You can enable the plugin as a part of Botkube instance configuration.
 
-1. If you don't have an existing Botkube instance, create a new one, according to the [Installation](../../installation/index.mdx) docs.
+1. If you don't have an existing Botkube instance, create a new one, according to the [Installation](../installation/index.mdx) docs.
 2. From the [Botkube Cloud homepage](https://app.botkube.io), click on a card of a given Botkube instance.
 3. Navigate to the platform tab which you want to configure.
 4. Click **Add plugin** button.
@@ -58,7 +58,7 @@ List of the read-only commands:
 
 ### Read-write commands
 
-For the read-write commands the Botkube RBAC needs to be adjusted. For more information, see the [**Enabling plugin**](../../configuration/executor/helm.md#enabling-plugin) section.
+For the read-write commands the Botkube RBAC needs to be adjusted. For more information, see the [Get started](#get-started) section.
 
 List of the read-write commands:
 
