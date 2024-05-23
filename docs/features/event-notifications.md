@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ## Actionable notifications
 
-If you have [`kubectl` executor enabled](docs/configuration/executor/kubectl.md) for a given channel, you can run commands related to a resource from the notification itself. Use the dropdown on the left to select and run a given command:
+If you have [`kubectl` plugin enabled](../plugins/kubectl.md) for a given channel, you can run commands related to a resource from the notification itself. Use the dropdown on the left to select and run a given command:
 
 ![Actionable notifications](assets/actionable-notifications.png)
 

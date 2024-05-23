@@ -47,7 +47,7 @@ During startup, the Botkube Agent downloads plugins index and all enabled plugin
 
 Each plugin may define required external dependencies that are downloaded by the [Plugin manager](#plugin-manager) at Agent startup. For now, those dependencies are taken from the official sources and are not mirrored to the Botkube Cloud registry. Here are the links that describe external dependencies for each officially supported plugin:
 
-- [`kubectl`](../self-hosted-configuration/executor/kubectl.md) executor: https://github.com/kubeshop/botkube/blob/release-1.9/internal/executor/kubectl/executor.go#L33-L42
+- [`kubectl`](../plugins/kubectl.md) executor: https://github.com/kubeshop/botkube/blob/release-1.9/internal/executor/kubectl/executor.go#L33-L42
 
 `helm` plugin:
 

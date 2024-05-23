@@ -12,11 +12,11 @@ There are also built-in Botkube commands available, as well as other features, s
 
 Botkube can define multiple aliases for arbitrary commands. The aliases are replaced with the underlying command before executing it. Aliases can replace a single word or multiple ones. For example, you can define a `k` alias for `kubectl`, or `kgp` for `kubectl get pods`.
 
-Aliases work for all commands, including executor plugins and Botkube built-in ones. To learn more about how to configure Executors, see the [Executor](../self-hosted-configuration/executor/index.md) section.
+Aliases work for all commands, including [executor plugins](../plugins/index.md) and Botkube built-in ones.
 
-Aliases are defined globally for the whole Botkube installation. Once they are configured, read the [Aliases](../usage/executor/index.md#aliases) section in Usage document.
+Aliases are defined globally for the whole Botkube installation.
 
-### Botkube Cloud
+### Botkube Cloud configuration
 
 You can configure aliases in the Botkube Cloud dashboard.
 
@@ -30,7 +30,7 @@ You can configure aliases in the Botkube Cloud dashboard.
 5. Select instances for which you want to enable the alias.
 6. Click **Apply** button.
 
-### Self-hosted Botkube syntax
+### Self-hosted Botkube configuration
 
 To configure the aliases for the self-hosted Botkube installation, use the following syntax:
 
@@ -81,7 +81,7 @@ Run `@Botkube help` to find information about the supported commands.
 
 Run `@Botkube ping` to the channel where Botkube is added. The Botkube will respond you with the **pong** message from all the configured clusters.
 
-For [multi-cluster configuration](./executor/index.md#specify-cluster-name), use the `--cluster-name` flag to get response from the cluster mentioned in the flag. Else check the deployment in Kubernetes cluster in the **botkube** namespace.
+For multi-cluster configuration, use the [`--cluster-name` flag](#specify-cluster-name) to get response from the cluster mentioned in the flag.
 
 ### List Botkube executors
 
@@ -110,8 +110,6 @@ To learn about the commands related to Actions, see the [Manage actions with Bot
 ### View Botkube configuration
 
 Run `@Botkube show config` message from the configured channel where Botkube is added. The bot will reply to you with the configuration with which the controller is running.
-
-To see how to update the configuration, see the [Updating the configuration](../self-hosted-configuration/index.mdx#updating-the-configuration) section in the Configuration document.
 
 ## Global flags
 
@@ -145,7 +143,7 @@ The `--filter` flag uses simple string matching. And, only works for Botkube exe
 #### Interactive output filtering
 
 :::info
-Interactive output filtering is only available for the [Slack](../installation/slack/index.md) and [Microsoft Teams](../installation/teams.md) integrations that supports interactive messages.
+Interactive output filtering is only available for the [Slack](../installation/slack/index.md) and [Microsoft Teams](../installation/teams/index.md) integrations that supports interactive messages.
 :::
 
 :::caution
@@ -154,7 +152,7 @@ This issue is tracked in [botkube#907](https://github.com/kubeshop/botkube/issue
 :::
 
 Sometimes you can get long response from a certain command and you may want to filter that to see a subset of the actual result.
-For each communication platform, you can use the `--filter` flag at the end of your command. To learn more, see the [Flags](../usage/executor/index.md#filtering-kubectl-output) section.
+For each communication platform, you can use the `--filter` flag at the end of your command. To learn more, see the [Filtering text output](#filtering-text-output) section.
 
 If you use the [Slack integration](../installation/slack/index.md) that supports interactive messages, there is another option to handle that: interactive output filtering.
 Interactivity is achieved via an input action text box where you can add your filter criteria as text and press the **Enter** button.

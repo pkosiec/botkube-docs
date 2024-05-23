@@ -351,7 +351,7 @@ that it can be accessible by all plugins in the container.
 While Executor plugins support multiple mapping types, there are the following limitations:
 
 - Source plugins support only the `Static` mapping.
-- Automated [actions](../usage/automated-actions.md) support only the `Static` mapping.
+- [Automated actions](../features/automated-actions.md) support only the `Static` mapping.
 
 ### RBAC configuration merging
 

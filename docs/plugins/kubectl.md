@@ -8,7 +8,7 @@ sidebar_position: 2
 
 The Kubectl executor plugin allows you to run the `kubectl` command directly in the communication platform.
 
-By default, just the read-only `kubectl` commands are supported. For enabling commands that require create, update or delete rules, you need to create specific (Cluster)Role and (Cluster)RoleBinding and reference it in the RBAC configuration. To learn more, refer to the [RBAC section](../rbac.md).
+By default, just the read-only `kubectl` commands are supported. For enabling commands that require create, update or delete rules, you need to create specific (Cluster)Role and (Cluster)RoleBinding and reference it in the RBAC configuration. To learn more, refer to the [RBAC section](../features/rbac.md).
 
 ## How to enable the plugin
 
@@ -16,7 +16,7 @@ By default, just the read-only `kubectl` commands are supported. For enabling co
 
 You can enable the plugin as a part of Botkube instance configuration.
 
-1. If you don't have an existing Botkube instance, create a new one, according to the [Installation](../../installation/index.mdx) docs.
+1. If you don't have an existing Botkube instance, create a new one, according to the [Installation](../installation/index.mdx) docs.
 2. From the [Botkube Cloud homepage](https://app.botkube.io), click on a card of a given Botkube instance.
 3. Navigate to the platform tab which you want to configure.
 4. Click **Add plugin** button.
@@ -35,7 +35,7 @@ plugins:
       url: https://github.com/kubeshop/botkube/releases/download/v1.11.0/plugins-index.yaml
 ```
 
-To enable Kubectl executor, add ``--set 'executors.k8s-default-tools.botkube/kubectl.enabled=true'` to a given Botkube [`install` command](../../cli/commands/botkube_install.md).
+To enable Kubectl executor, add ``--set 'executors.k8s-default-tools.botkube/kubectl.enabled=true'` to a given Botkube [`install` command](../cli/commands/botkube_install.md).
 
 ## Usage
 
@@ -47,7 +47,7 @@ To execute the `kubectl` commands, send message in following format in the chann
 
 ### Aliases
 
-By default, `k` and `kc` are configured as aliases for the `kubectl` command. You can use them on par with the `kubectl` command. To read more about aliases configuration, see the [Alias](../../configuration/alias.md) section.
+By default, `k` and `kc` are configured as aliases for the `kubectl` command. You can use them on par with the `kubectl` command. To read more about aliases configuration, see the [Alias](../features/commands.md#command-aliases) section.
 
 ### Interactive kubectl commands builder
 
@@ -56,7 +56,7 @@ Use the interactive `kubectl` command builder to construct a `kubectl` command j
 The builder includes a resource name dropdown list. This is pre-populated with all the relevant resource names. It's great for discovering resources with the option to select them. E.g. Just grab a Pod name without needing to type or copy-and-paste.
 
 To start the interactive `kubectl` command builder, run `@Botkube kubectl` from the configured channel where Botkube is added.
-You can also use any of the [configured aliases](../../configuration/alias.md) - for example, the default `k` one, as illustrated below:
+You can also use any of the [configured aliases](../features/commands.md#command-aliases) - for example, the default `k` one, as illustrated below:
 
 ![kubectl command builder](./assets/kc-cmd-builder.gif)
 
@@ -67,14 +67,14 @@ Keep in mind that the interactive command builder may not support all the comman
 - Under verbs' dropdown, we display verbs that are defined under the `interactiveBuilder.allowed.verbs` configuration.
   :::tip
   The default verbs for the `kubectl` plugin found in the [values.yaml](https://github.com/kubeshop/botkube/blob/main/helm/botkube/values.yaml) file.
-  If you ServiceAccount allow running other actions such as `delete`, you can add them directly under [`interactiveBuilder.allowed.verbs`](../../configuration/executor/kubectl.md#syntax).
+  If you ServiceAccount allow running other actions such as `delete`, you can add them directly under [`interactiveBuilder.allowed.verbs`](#configuration).
   :::
 
 - Under resources' dropdown, we display resources that are defined under the `interactiveBuilder.allowed.resources` configuration and are allowed for already selected verb. For example, for the `logs` verb we display only `pods`, `statefulsets`, `deployments`, and `daemonsets`.
   :::tip
   The default resources for the `kubectl` plugin found in the [values.yaml](https://github.com/kubeshop/botkube/blob/main/helm/botkube/values.yaml) file.
 
-  If you ServiceAccount allow access to more resources, you can add them directly under [`interactiveBuilder.allowed.resources`](../../configuration/executor/kubectl.md#syntax).
+  If you ServiceAccount allow access to more resources, you can add them directly under [`interactiveBuilder.allowed.resources`](#configuration).
   :::
 
 - For resources that are namespace-scoped, under namespaces' dropdown, we display `interactiveBuilder.allowed.namespaces` if defined. If static namespaces are not specified, plugin needs to have access to fetch all Namespaces, otherwise Namespace dropdown won't be visible at all.

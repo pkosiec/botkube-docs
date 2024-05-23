@@ -7,7 +7,7 @@ sidebar_position: 4
 You can request Botkube to generate and pass kubeconfig file to your plugin by adding RBAC section
 to your plugin configuration. The following example requests a kubeconfig that impersonates
 user **User.rbac.authorization.k8s.io** `read-only-user`. For more information refer to the
-[RBAC section](../../features/rbac.md). The example is for executor plugins, source plugins
+[RBAC section](../../../features/rbac.md). The example is for executor plugins, source plugins
 can access kubeconfig in their `Stream()` function in `source.StreamInput`.
 
 RBAC config for an example plugin:
