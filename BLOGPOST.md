@@ -5,18 +5,25 @@ Kelly:
 
 ---
 
-# Building Fuse 
+Generate a few paragraphs for a blog post "Fusing Ideas: Designing Botkube Fuse to Combat Context Switching in DevOps" which talks about how we came up with Fuse.
 
-- At Botkube, we are in contact with multiple different DevOps teams, hearing their problems
+4 paragraphs:
+- Introduction
+- How it started
+- Brainstorming
+- Pain points
 
+max 10 sentences per paragraph.
+
+Based on the following notes:
+
+
+- Audience: Simple - We targeted just platform engineers / SRE / DevOps as we know them best when building Botkube 
+- Based on the feedback we found Acute pain point: Context switching and multitasking
 - We built Fuse in two months
 
 - Codename: Fuse, as it's easy to remember, and comes from "fusion"
 
-
-- Audience: Simple - For now we targeted just platform engineers / SRE / DevOps. However, at some point, with a suggested solution, we might target developers, managers and other team members too,with proper access rights.
-
-- Acute pain point: Context switching and multitasking
 Platform Engineers often have to rapidly switch between responding to questions, issues, and outages for multiple services simultaneously. Doing ad-hoc tasks, switching tabs for multiple project docs, answering some questions to developers related to infrastructure, to help troubleshoot infra problems with developers etc.
 
 Platform Engineers are often demotivated when doing a lot of manual stuff. Here’s a short list of tedious tasks from day-to-day work:
@@ -38,7 +45,19 @@ Also, another pain points result in context switching
 - Misalignment with development teams: Platform Engineering/DevOps/SRE teams are sometimes treated as a help desk for developers or expected to architect systems without proper support from engineering leadership
 - Fuse leverages existing Botkube technology (AI assistant, Cloud infrastructure) and takes it to next level
 
+In today's fast-paced DevOps environments, platform engineers, SREs, and DevOps teams face constant interruptions and shifting priorities. They juggle multiple services, troubleshoot infrastructure problems, and respond to requests from developers, all while ensuring system reliability. This relentless context switching can lead to inefficiency, frustration, and ultimately burnout. In response to this widespread pain point, we set out to design Botkube Fuse—a solution specifically aimed at reducing multitasking and context switching for platform engineers, allowing them to focus on more meaningful tasks. The result? A tool that fuses the capabilities of Botkube with a streamlined workflow to empower engineers to work smarter, not harder.
 
+Botkube Fuse started with a simple observation: Platform engineers are overwhelmed. From managing CI/CD alerts to fielding questions about database scaling, these professionals are forced to pivot between various tasks and tools, rarely getting the chance to work deeply on one issue. During conversations with our community, it became clear that the endless context switching was an acute pain point. We felt this problem firsthand when working with Botkube users and realized it needed to be addressed urgently. With a two-month deadline in mind, we set out to build Fuse—a name inspired by the concept of "fusion"—to unify tasks and reduce the cognitive load of DevOps teams.
+
+The brainstorming phase was both fast-paced and collaborative. We gathered feedback from platform engineers, SREs, and developers to map out their most tedious tasks and interruptions. Our goal was to identify the most common sources of friction: checking CI alerts, answering infrastructure questions, generating Terraform files, or investigating Kubernetes issues. By pinpointing these daily interruptions, we envisioned a tool that could handle these queries proactively and automate responses where possible. We also knew that Fuse had to integrate seamlessly with existing tools and workflows, leveraging Botkube’s AI assistant and cloud infrastructure expertise to offer a smoother experience.
+
+The pain points were clear: platform engineers were expected to manage "everythingOps" with minimal staffing, and often without proper alignment from development teams. Engineers were demotivated by manual, repetitive work and felt like they were being treated as a help desk rather than strategic partners. Misalignment with engineering leadership added to the frustration, as these teams were tasked with system architecture while simultaneously supporting day-to-day operations. Fuse was designed with these pain points in mind—empowering engineers to combat constant interruptions, automate mundane tasks, and reclaim time for higher-impact work.
+
+
+
+---
+
+# Fusing Ideas: Designing Botkube Fuse to Combat Context Switching in DevOps
 
 
 
