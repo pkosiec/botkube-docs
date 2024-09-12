@@ -7,19 +7,14 @@ Kelly:
 
 # Building Fuse 
 
-- At Botkube, we are in contact with multiple different DevOps teams
+- At Botkube, we are in contact with multiple different DevOps teams, hearing their problems
 
-- 
+- We built Fuse in two months
 
 - Codename: Fuse, as it's easy to remember, and comes from "fusion"
-- We built Fuse in two months
 
 
 - Audience: Simple - For now we targeted just platform engineers / SRE / DevOps. However, at some point, with a suggested solution, we might target developers, managers and other team members too,with proper access rights.
-
-- Acute pain point: Context switching and multitasking
-
-  
 
 - Acute pain point: Context switching and multitasking
 Platform Engineers often have to rapidly switch between responding to questions, issues, and outages for multiple services simultaneously. Doing ad-hoc tasks, switching tabs for multiple project docs, answering some questions to developers related to infrastructure, to help troubleshoot infra problems with developers etc.
@@ -41,23 +36,9 @@ Also, another pain points result in context switching
 
 - Lack of proper staffing and support: Many organizations expect Platform Engineers/DevOps/SRE practitioners to cover an extremely wide range of responsibilities ("EverythingOps") without adequate staffing, leading to burnout.
 - Misalignment with development teams: Platform Engineering/DevOps/SRE teams are sometimes treated as a help desk for developers or expected to architect systems without proper support from engineering leadership
+- Fuse leverages existing Botkube technology (AI assistant, Cloud infrastructure) and takes it to next level
 
 
-Fuse leverages existing Botkube technology (AI assistant, Cloud infrastructure) and takes it to next level
-
-
-# What we built differently
-
-- there are multiple similar tools out there
-
-- we wanted to build Fuse differently
- - Deep understanding of your infrastructure
- - Connecting multiple data sources and introspecting interdependencies
- - Focus on specific use cases, including:
-   - Automated GCP and GitHub Actions Secret Management
-   - Getting summary of CI/CD pipeline runs
-   - Troubleshooting combined GKE Cluster and IAM Permissions outage
-   - Answering environment (localhost) related questions
 
 
 
@@ -81,7 +62,6 @@ While there are similar tools in the AI space, we wanted to build something diff
 Firstly, we aim to integrate your data from different sources and make the Fuse AI assistant aware of connections between them. Imagine a smart assistant who understands your infrastructure: from your Terraform modules, ArgoCD app manifests in your git repository, through your GitHub Actions pipelines, Google Cloud Platform resources current state, to actual business-critical services deployed in Kubernetes. That's what we have in mind while building Fuse. Magic, eh?
 
 [MAGIC GIF]
-
 
 We introduced the `fuse init` command which currently introspects your Google Cloud Platform project, your GKE clusters and other resources, to help with your complex scenarios on the edge of Kubernetes and GCP. But that's just a glimpse of what we want to build. Stay tuned!
 
