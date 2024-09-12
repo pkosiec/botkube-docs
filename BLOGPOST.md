@@ -5,17 +5,11 @@ Kelly:
 
 ---
 
-Generate a few paragraphs for a blog post "Fusing Ideas: Designing Botkube Fuse to Combat Context Switching in DevOps" which talks about how we came up with Fuse.
+Generate paragraphs marked with "TODO" for a blog post "Fusing Ideas: Designing Botkube Fuse to Combat Context Switching in DevOps" which talks about how we came up with Fuse.
 
-4 paragraphs:
-- Introduction
-- How it started
-- Brainstorming
-- Pain points
+max 12 sentences per paragraph.
 
-max 10 sentences per paragraph.
-
-Based on the following notes:
+# Notes
 
 
 - Audience: Simple - We targeted just platform engineers / SRE / DevOps as we know them best when building Botkube 
@@ -54,17 +48,35 @@ The brainstorming phase was both fast-paced and collaborative. We gathered feedb
 The pain points were clear: platform engineers were expected to manage "everythingOps" with minimal staffing, and often without proper alignment from development teams. Engineers were demotivated by manual, repetitive work and felt like they were being treated as a help desk rather than strategic partners. Misalignment with engineering leadership added to the frustration, as these teams were tasked with system architecture while simultaneously supporting day-to-day operations. Fuse was designed with these pain points in mind—empowering engineers to combat constant interruptions, automate mundane tasks, and reclaim time for higher-impact work.
 
 
-
 ---
+# BLOG POST:
 
 # Fusing Ideas: Designing Botkube Fuse to Combat Context Switching in DevOps
 
+## Introduction
+
+<!-- TODO -->
 
 
+In this blog post, we’ll take a look at how Botkube Fuse was built, what was the reason to build it, and which acute pain points we address.
 
+## Acute pain point identified: Context switching and multitasking
 
+The design process for Fuse was born out of necessity and shaped by user feedback. As we engaged with platform engineers, SREs, and DevOps practitioners in our community, it became clear that their biggest challenge was the sheer volume of tasks they had to handle simultaneously. Our team began by identifying the most common sources of frustration, such as constantly checking CI/CD alerts, troubleshooting Kubernetes issues, and answering repetitive infrastructure questions.
 
-## How does it work?
+Context switching is one of the most significant challenges platform engineers face in their daily work. Whether it’s responding to alerts from CI pipelines, troubleshooting deployment issues, or answering developer queries, they are often pulled in multiple directions at once. This fragmented focus leads to inefficiencies and can significantly slow down productivity. In many cases, engineers spend more time switching between tasks than actually solving problems.
+
+## Working on the solution
+
+Once we identified the most common pain points, we began to design a new tool. As the terminal is the natural choice for DevOps or platform engineers, we decided to build a CLI tool that helps with that. While we found similar tools in the ecosystem (similar at a first glance), we had a few ideas how to build something better.
+
+After 1 month of the development, the initial version of the tool was done.
+
+Now, we can't forget about the hardest part: naming.
+
+The name “Fuse” was chosen to represent the core idea of unifying and streamlining tasks for platform engineers. It stems from the concept of “fusion”, symbolizing the merging of multiple tools, tasks, and workflows into a single, cohesive solution. We wanted a name that was easy to remember and reflected the tool’s purpose of reducing fragmentation caused by context switching. Fuse brings together the enhanced power of Botkube’s AI capabilities with a simplified workflow, helping engineers focus on what matters most. The name perfectly encapsulates the tool’s mission to “fuse” everything into a seamless experience.
+
+## So, how does Fuse work?
 
 Botkube Fuse is a terminal tool which uses our brand-new AI assistant to answer your questions and solve your challenges during your day-to-day work. Unlike some other tools on the market (including Botkube), it's just a single CLI binary without an agent. You just simply [install Fuse](https://botkube.io/fuse) and type `fuse 'your prompt here...'`, or run `fuse` to enter interactive mode and start chatting.
 
@@ -97,3 +109,7 @@ However, even with such knowledge, we do believe that even the most powerful AI 
 How does it work? The Fuse AI assistant categorizes your question first, and then if it’s close to our predefined scenarios, it uses our custom instruction for guidance to do the work. Of course users can still customize the behavior with customized prompts but we want to make sure it follows the right path by default.
 
 While more scenarios will definitely ship soon, we also do believe that users should be able to write custom instructions and reuse them automatically in a given context. Expect some updates around that in the following weeks - and if you have any suggestions for improvements or new scenarios, please let us know on Slack or by getting in touch.
+
+## Summary
+
+<!-- TODO -->
