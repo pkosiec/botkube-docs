@@ -1,9 +1,3 @@
-> i like the "how it works" part - could we do a "How we built a context-away devops assistent in 2 months" blog-post!?
-
-Kelly:
-> We could do it from a “we were looking for something to help us with our devops/context switching issues” and the thought processes in designing it rather than the actual internal tech behind it? I’m sure we can include some of the internals but it would be more of a “we built this for us and all of our pain points that we know other DevOps engineers have” vs “how to build your own Fuse”.
-
----
 
 Generate paragraphs marked with "TODO" for a blog post "Fusing Ideas: Designing Botkube Fuse to Combat Context Switching in DevOps" which talks about how we came up with Fuse.
 
@@ -48,37 +42,46 @@ The brainstorming phase was both fast-paced and collaborative. We gathered feedb
 The pain points were clear: platform engineers were expected to manage "everythingOps" with minimal staffing, and often without proper alignment from development teams. Engineers were demotivated by manual, repetitive work and felt like they were being treated as a help desk rather than strategic partners. Misalignment with engineering leadership added to the frustration, as these teams were tasked with system architecture while simultaneously supporting day-to-day operations. Fuse was designed with these pain points in mind—empowering engineers to combat constant interruptions, automate mundane tasks, and reclaim time for higher-impact work.
 
 
+- Fuse leverages existing Botkube technology (AI assistant, Cloud infrastructure) and takes it to next level
+
 ---
-# BLOG POST:
+
 
 # Fusing Ideas: Designing Botkube Fuse to Combat Context Switching in DevOps
 
 ## Introduction
 
-<!-- TODO -->
+In today’s fast-paced world, DevOps, SRE, and platform engineers are constantly juggling multiple tasks—from navigating through various layers of a project when implementing new functionalities to answering developer questions and troubleshooting infrastructure issues. This constant context switching often leads to inefficiencies and burnout.
 
+In this blog post, we’ll dive into the journey of building Botkube Fuse, a tool designed to address these challenges. We’ll explore the problems it solves, the design process, and how it can help streamline workflows for platform engineers.
 
-In this blog post, we’ll take a look at how Botkube Fuse was built, what was the reason to build it, and which acute pain points we address.
+## Design phase
 
-## Acute pain point identified: Context switching and multitasking
+The design process for Fuse was born out of necessity and shaped by user feedback. As we engaged with platform engineers, SREs, and DevOps practitioners in our community, it became clear that their biggest challenge was the sheer volume of tasks they had to handle simultaneously. Our team began by identifying the most common sources of frustration, such as going through multiple different browser tabs for project documentation, constantly checking CI/CD alerts, and answering repetitive infrastructure questions. These scenarios are just examples of a bigger problem: context switching.
 
-The design process for Fuse was born out of necessity and shaped by user feedback. As we engaged with platform engineers, SREs, and DevOps practitioners in our community, it became clear that their biggest challenge was the sheer volume of tasks they had to handle simultaneously. Our team began by identifying the most common sources of frustration, such as constantly checking CI/CD alerts, troubleshooting Kubernetes issues, and answering repetitive infrastructure questions.
+## Acute pain point identified
 
-Context switching is one of the most significant challenges platform engineers face in their daily work. Whether it’s responding to alerts from CI pipelines, troubleshooting deployment issues, or answering developer queries, they are often pulled in multiple directions at once. This fragmented focus leads to inefficiencies and can significantly slow down productivity. In many cases, engineers spend more time switching between tasks than actually solving problems.
+Context switching is one of the most significant challenges platform engineers face in their daily work. Whether it’s responding to alerts from CI pipelines, troubleshooting deployment issues, or answering developer queries, they are often pulled in multiple directions at once. This fragmented focus leads to inefficiencies and can significantly slow down productivity. In many cases, engineers spend more time switching between tasks than actually solving problems. Eventually, it might end with a burnout.
 
-## Working on the solution
+That’s not all. Context switching can also result from a lack of proper staffing and support. Many organizations expect Platform Engineers, DevOps, and SRE practitioners to cover an extremely wide range of responsibilities (“EverythingOps”) without adequate resources. Additionally, these teams are sometimes treated like a help desk for developers or are expected to architect systems without sufficient backing from engineering leadership, further worsening the problem.
 
-Once we identified the most common pain points, we began to design a new tool. As the terminal is the natural choice for DevOps or platform engineers, we decided to build a CLI tool that helps with that. While we found similar tools in the ecosystem (similar at a first glance), we had a few ideas how to build something better.
+# Design process
 
-After 1 month of the development, the initial version of the tool was done.
+Once we understood the pain point we want to solve, the next thing was to design a solution.
+As the terminal is the natural choice for most of the DevOps or platform engineers we met, we decided to use it as a base for our design.
+So we've went with building CLI tool that combines multiple different tools and knowledge sources into a single, unified experience.
 
-Now, we can't forget about the hardest part: naming.
+Now, we can't forget about the hardest part of the design process: naming.
 
 The name “Fuse” was chosen to represent the core idea of unifying and streamlining tasks for platform engineers. It stems from the concept of “fusion”, symbolizing the merging of multiple tools, tasks, and workflows into a single, cohesive solution. We wanted a name that was easy to remember and reflected the tool’s purpose of reducing fragmentation caused by context switching. Fuse brings together the enhanced power of Botkube’s AI capabilities with a simplified workflow, helping engineers focus on what matters most. The name perfectly encapsulates the tool’s mission to “fuse” everything into a seamless experience.
 
-## So, how does Fuse work?
+## So, what's Fuse?
 
-Botkube Fuse is a terminal tool which uses our brand-new AI assistant to answer your questions and solve your challenges during your day-to-day work. Unlike some other tools on the market (including Botkube), it's just a single CLI binary without an agent. You just simply [install Fuse](https://botkube.io/fuse) and type `fuse 'your prompt here...'`, or run `fuse` to enter interactive mode and start chatting.
+After 1 month of the development, we launched the very first public Fuse release.
+
+The result of our work is a terminal tool which uses our brand-new AI assistant to answer your questions and solve your challenges during your day-to-day work. Unlike some other tools on the market (including Botkube), it's just a single CLI binary without an agent. You just simply [install Fuse](https://botkube.io/fuse) and type `fuse 'your prompt here...'`, or run `fuse` to enter interactive mode and start chatting.
+
+## How does it work?
 
 Fuse uses the powerful GPT-4o model from OpenAI to get things done. We integrated a variety of tools to assist you with Kubernetes, Google Cloud Platform, GitHub, git, and local filesystem operations. It can even generate and execute Python code on your behalf!
 
@@ -86,7 +89,7 @@ Fuse uses the powerful GPT-4o model from OpenAI to get things done. We integrate
 
 ## How does Fuse differ from other tools in the market?
 
-While there are similar tools in the AI space, we wanted to build something different. That’s why we established two bold assumptions.
+While there are similar tools in the AI space, we wanted to build something different - and better. That’s why we established two bold assumptions.
 
 ### End-to-end knowledge about your infrastructure
 
@@ -112,4 +115,4 @@ While more scenarios will definitely ship soon, we also do believe that users sh
 
 ## Summary
 
-<!-- TODO -->
+<!-- TODO - 5-6 sentences; encourage to try Fuse -->
