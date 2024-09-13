@@ -77,7 +77,7 @@ The name “Fuse” was chosen to represent the core idea of unifying and stream
 
 ## So, what's Fuse?
 
-After 1 month of the development, we launched the very first public Fuse release.
+After 2 months of the design, planning and development, we launched the very first public Fuse release.
 
 The result of our work is a terminal tool which uses our brand-new AI assistant to answer your questions and solve your challenges during your day-to-day work. Unlike some other tools on the market (including Botkube), it's just a single CLI binary without an agent. You just simply [install Fuse](https://botkube.io/fuse) and type `fuse 'your prompt here...'`, or run `fuse` to enter interactive mode and start chatting.
 
@@ -115,4 +115,8 @@ While more scenarios will definitely ship soon, we also do believe that users sh
 
 ## Summary
 
-<!-- TODO - 5-6 sentences; encourage to try Fuse -->
+We really enjoyed the journey we took to build Fuse. While it was an intensive process, it was fun!
+
+ To recap, Botkube Fuse is designed to help platform engineers, DevOps, and SREs reduce the inefficiencies caused by constant context switching. By unifying multiple tools into a single terminal-based CLI powered by AI, Fuse simplifies complex workflows and automates repetitive tasks. With features like GKE troubleshooting, GitHub Actions analysis, and more, it’s built to solve real-world challenges. 
+
+Best of all, Fuse is [free to try](https://botkube.io/fuse)—so give it a try and see how it can streamline your day-to-day work. We’d love to hear your feedback—reach out to us via [Slack](https://join.botkube.io/) or our social media channels!
