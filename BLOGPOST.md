@@ -1,107 +1,64 @@
-
-Generate paragraphs marked with "TODO" for a blog post "Fusing Ideas: Designing Botkube Fuse to Combat Context Switching in DevOps" which talks about how we came up with Fuse.
-
-max 12 sentences per paragraph.
-
-# Notes
-
-
-- Audience: Simple - We targeted just platform engineers / SRE / DevOps as we know them best when building Botkube 
-- Based on the feedback we found Acute pain point: Context switching and multitasking
-- We built Fuse in two months
-
-- Codename: Fuse, as it's easy to remember, and comes from "fusion"
-
-Platform Engineers often have to rapidly switch between responding to questions, issues, and outages for multiple services simultaneously. Doing ad-hoc tasks, switching tabs for multiple project docs, answering some questions to developers related to infrastructure, to help troubleshoot infra problems with developers etc.
-
-Platform Engineers are often demotivated when doing a lot of manual stuff. Here’s a short list of tedious tasks from day-to-day work:
-- Check CI alerts and get errors from CI/CD pipeline failures
-- Go through all Slack mentions 
-- Wait for a colleague to ask some questions about a specific domain
-- Check which db is used by serviceB.
-- Ask what's the difference between db sizes dev vs prod that serviceB uses.
-- Do I need to worry about scaling up the db for serviceB?
-- Generate tf and kube files for a new service which requires a pubsub topic and access to GCS 
-- Check if a given pull request was already merged and released on production.
-- Check the last failed CI jobs and their summaries
-- Answer questions to developers about whether UI is already released
-- Debug change for the K8s Service type: I changed it to LoadBalancer but it’s still not applied: why? I need to check GitHub repo, Helm chart, ArgoCD sync, Kubernetes resource
-
-Also, another pain points result in context switching
-
-- Lack of proper staffing and support: Many organizations expect Platform Engineers/DevOps/SRE practitioners to cover an extremely wide range of responsibilities ("EverythingOps") without adequate staffing, leading to burnout.
-- Misalignment with development teams: Platform Engineering/DevOps/SRE teams are sometimes treated as a help desk for developers or expected to architect systems without proper support from engineering leadership
-- Fuse leverages existing Botkube technology (AI assistant, Cloud infrastructure) and takes it to next level
-
-In today's fast-paced DevOps environments, platform engineers, SREs, and DevOps teams face constant interruptions and shifting priorities. They juggle multiple services, troubleshoot infrastructure problems, and respond to requests from developers, all while ensuring system reliability. This relentless context switching can lead to inefficiency, frustration, and ultimately burnout. In response to this widespread pain point, we set out to design Botkube Fuse—a solution specifically aimed at reducing multitasking and context switching for platform engineers, allowing them to focus on more meaningful tasks. The result? A tool that fuses the capabilities of Botkube with a streamlined workflow to empower engineers to work smarter, not harder.
-
-Botkube Fuse started with a simple observation: Platform engineers are overwhelmed. From managing CI/CD alerts to fielding questions about database scaling, these professionals are forced to pivot between various tasks and tools, rarely getting the chance to work deeply on one issue. During conversations with our community, it became clear that the endless context switching was an acute pain point. We felt this problem firsthand when working with Botkube users and realized it needed to be addressed urgently. With a two-month deadline in mind, we set out to build Fuse—a name inspired by the concept of "fusion"—to unify tasks and reduce the cognitive load of DevOps teams.
-
-The brainstorming phase was both fast-paced and collaborative. We gathered feedback from platform engineers, SREs, and developers to map out their most tedious tasks and interruptions. Our goal was to identify the most common sources of friction: checking CI alerts, answering infrastructure questions, generating Terraform files, or investigating Kubernetes issues. By pinpointing these daily interruptions, we envisioned a tool that could handle these queries proactively and automate responses where possible. We also knew that Fuse had to integrate seamlessly with existing tools and workflows, leveraging Botkube’s AI assistant and cloud infrastructure expertise to offer a smoother experience.
-
-The pain points were clear: platform engineers were expected to manage "everythingOps" with minimal staffing, and often without proper alignment from development teams. Engineers were demotivated by manual, repetitive work and felt like they were being treated as a help desk rather than strategic partners. Misalignment with engineering leadership added to the frustration, as these teams were tasked with system architecture while simultaneously supporting day-to-day operations. Fuse was designed with these pain points in mind—empowering engineers to combat constant interruptions, automate mundane tasks, and reclaim time for higher-impact work.
-
-
-- Fuse leverages existing Botkube technology (AI assistant, Cloud infrastructure) and takes it to next level
-
----
-
-
 # Fusing Ideas: Designing Botkube Fuse to Combat Context Switching in DevOps
 
 ## Introduction
 
-In today’s fast-paced world, DevOps, SRE, and platform engineers are constantly juggling multiple tasks—from navigating through various layers of a project when implementing new functionalities to answering developer questions and troubleshooting infrastructure issues. This constant context switching often leads to inefficiencies and burnout.
+In today’s fast-paced world, DevOps, SRE, and platform engineers constantly juggle multiple tasks—from navigating through various layers of a project while implementing new functionalities to answering developer questions and troubleshooting infrastructure issues. This constant context switching often leads to inefficiencies and burnout.
 
 In this blog post, we’ll dive into the journey of building Botkube Fuse, a tool designed to address these challenges. We’ll explore the problems it solves, the design process, and how it can help streamline workflows for platform engineers.
 
-## Design phase
+## The Inspiration Behind Fuse  
 
-The design process for Fuse was born out of necessity and shaped by user feedback. As we engaged with platform engineers, SREs, and DevOps practitioners in our community, it became clear that their biggest challenge was the sheer volume of tasks they had to handle simultaneously. Our team began by identifying the most common sources of frustration, such as going through multiple different browser tabs for project documentation, constantly checking CI/CD alerts, and answering repetitive infrastructure questions. These scenarios are just examples of a bigger problem: context switching.
+The design process for Fuse was born out of necessity and shaped by user feedback. As we engaged with platform engineers, SREs, and DevOps practitioners in our community, it became clear that their biggest challenge was the sheer volume of tasks they had to handle simultaneously. Our team began by identifying the most common sources of frustration, such as switching between multiple browser tabs for project documentation, constantly checking CI/CD alerts, and answering repetitive infrastructure questions. These scenarios are just examples of a larger problem: context switching.
 
-## Acute pain point identified
+## Tackling the Core Pain Point: Context Switching
 
 Context switching is one of the most significant challenges platform engineers face in their daily work. Whether it’s responding to alerts from CI pipelines, troubleshooting deployment issues, or answering developer queries, they are often pulled in multiple directions at once. This fragmented focus leads to inefficiencies and can significantly slow down productivity. In many cases, engineers spend more time switching between tasks than actually solving problems. Eventually, it might end with a burnout.
 
 That’s not all. Context switching can also result from a lack of proper staffing and support. Many organizations expect Platform Engineers, DevOps, and SRE practitioners to cover an extremely wide range of responsibilities (“EverythingOps”) without adequate resources. Additionally, these teams are sometimes treated like a help desk for developers or are expected to architect systems without sufficient backing from engineering leadership, further worsening the problem.
 
-# Design process
+![](./assets/joggling.gif)
 
-Once we understood the pain point we want to solve, the next thing was to design a solution.
-As the terminal is the natural choice for most of the DevOps or platform engineers we met, we decided to use it as a base for our design.
-So we've went with building CLI tool that combines multiple different tools and knowledge sources into a single, unified experience.
+_GIF source: [tenor.com](https://tenor.com)_
 
-Now, we can't forget about the hardest part of the design process: naming.
+## From Idea to Reality: Crafting the Perfect Solution
+
+Once we understood the pain point we wanted to solve, the next step was designing a solution. The terminal is the natural choice for most DevOps or platform engineers we engaged with, so we decided to use it as the foundation for our design. We opted to build a CLI tool that combines multiple different tools and knowledge sources into a single, unified experience.
+
+Now, we can’t forget the hardest part of the design process: naming.
 
 The name “Fuse” was chosen to represent the core idea of unifying and streamlining tasks for platform engineers. It stems from the concept of “fusion”, symbolizing the merging of multiple tools, tasks, and workflows into a single, cohesive solution. We wanted a name that was easy to remember and reflected the tool’s purpose of reducing fragmentation caused by context switching. Fuse brings together the enhanced power of Botkube’s AI capabilities with a simplified workflow, helping engineers focus on what matters most. The name perfectly encapsulates the tool’s mission to “fuse” everything into a seamless experience.
 
-## So, what's Fuse?
+## Meet Fuse: Your New DevOps Companion
 
-After 2 months of the design, planning and development, we launched the very first public Fuse release.
+After two months of design, planning, and development, we launched the first public Fuse release.
 
-The result of our work is a terminal tool which uses our brand-new AI assistant to answer your questions and solve your challenges during your day-to-day work. Unlike some other tools on the market (including Botkube), it's just a single CLI binary without an agent. You just simply [install Fuse](https://botkube.io/fuse) and type `fuse 'your prompt here...'`, or run `fuse` to enter interactive mode and start chatting.
+Fuse is a terminal tool powered by our most advanced AI assistant, designed to answer your questions and tackle challenges in your day-to-day work. Unlike some other tools on the market (including Botkube), it’s just a single CLI binary without an agent. You just simply [install Fuse](https://botkube.io/fuse) and type `fuse 'your prompt here...'`, or run `fuse` to enter interactive mode and start chatting.
 
-## How does it work?
+## Unlocking Fuse’s Power: How It Works
 
-Fuse uses the powerful GPT-4o model from OpenAI to get things done. We integrated a variety of tools to assist you with Kubernetes, Google Cloud Platform, GitHub, git, and local filesystem operations. It can even generate and execute Python code on your behalf!
+Fuse builds on existing Botkube technology, including our AI assistant and cloud infrastructure, and takes it to the next level.
 
-"Whoa, that's pretty dangerous", you might say. "I don't trust the code executed by AI". Good point! That's why Fuse requires user confirmation for each potentially dangerous operation (such as filesystem write or code execution), to make sure you are in full control of what's happening on your machine.
+Fuse uses the powerful GPT-4o model from OpenAI to get things done. We integrated a variety of tools to assist you with Kubernetes, Google Cloud Platform, GitHub, Git, and local filesystem operations. It can even generate and execute Python code on your behalf!
 
-## How does Fuse differ from other tools in the market?
+“Whoa, that’s pretty dangerous,” you might say. “I don’t trust the code executed by AI.” Good point! That’s why Fuse requires user confirmation for each potentially dangerous operation (such as filesystem writes or code execution) to ensure you are in full control of what’s happening on your machine.
 
-While there are similar tools in the AI space, we wanted to build something different - and better. That’s why we established two bold assumptions.
+## Why Fuse Stands Out
 
-### End-to-end knowledge about your infrastructure
+While there are similar tools in the AI space, we wanted to build something different—and better. That’s why we established two bold principles.
+
+### A Holistic View of Your Infrastructure
 
 Firstly, we aim to integrate your data from different sources and make the Fuse AI assistant aware of connections between them. Imagine a smart assistant who understands your infrastructure: from your Terraform modules, ArgoCD app manifests in your git repository, through your GitHub Actions pipelines, Google Cloud Platform resources current state, to actual business-critical services deployed in Kubernetes. That's what we have in mind while building Fuse. Magic, eh?
 
-[MAGIC GIF]
+![](./assets/magic.gif)
+
+_GIF source: [tenor.com](https://tenor.com)_
 
 We introduced the `fuse init` command which currently introspects your Google Cloud Platform project, your GKE clusters and other resources, to help with your complex scenarios on the edge of Kubernetes and GCP. But that's just a glimpse of what we want to build. Stay tuned!
 
-### Focus on actual use-cases
+### Focused Solutions for Real Problems
 
-We want to solve real user problems. And the problems very often live on the edge of different parts of the infrastructure, hence the end-to.end infrastructure knowledge we explained in the previous paragraph.
+We aim to solve real user problems, which often arise at the intersection of different parts of the infrastructure—hence the need for the end-to-end infrastructure knowledge we described earlier.
 
 However, even with such knowledge, we do believe that even the most powerful AI assistants out there still require some guidance. Someone needs to do the “prompt engineering” work. That’s why we introduced AI assistant guidance for different user scenarios. Currently, we focused on:
 - GitHub Actions secret management
@@ -113,10 +70,10 @@ How does it work? The Fuse AI assistant categorizes your question first, and the
 
 While more scenarios will definitely ship soon, we also do believe that users should be able to write custom instructions and reuse them automatically in a given context. Expect some updates around that in the following weeks - and if you have any suggestions for improvements or new scenarios, please let us know on Slack or by getting in touch.
 
-## Summary
+## Wrapping Up
 
-We really enjoyed the journey we took to build Fuse. While it was an intensive process, it was fun!
+We thoroughly enjoyed the journey of building Fuse. While it was an intensive process, it was also a lot of fun!
 
- To recap, Botkube Fuse is designed to help platform engineers, DevOps, and SREs reduce the inefficiencies caused by constant context switching. By unifying multiple tools into a single terminal-based CLI powered by AI, Fuse simplifies complex workflows and automates repetitive tasks. With features like GKE troubleshooting, GitHub Actions analysis, and more, it’s built to solve real-world challenges. 
+To recap, Botkube Fuse is designed to help platform engineers, DevOps, and SREs reduce inefficiencies caused by constant context switching. By unifying multiple tools into a single, terminal-based CLI powered by AI, Fuse simplifies complex workflows and automates repetitive tasks. With features like GKE troubleshooting, GitHub Actions analysis, and more, it’s built to solve real-world challenges.
 
 Best of all, Fuse is [free to try](https://botkube.io/fuse)—so give it a try and see how it can streamline your day-to-day work. We’d love to hear your feedback—reach out to us via [Slack](https://join.botkube.io/) or our social media channels!
