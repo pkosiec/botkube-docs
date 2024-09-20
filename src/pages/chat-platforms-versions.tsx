@@ -5,7 +5,7 @@ import Admonition from "@theme/Admonition";
 import { useVersions, useLatestVersion } from "@docusaurus/plugin-content-docs/client";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
-import archivedVersionsMap from "@site/versions-archived.json";
+import archivedVersionsMap from "@site/chatPlatforms_versions-archived.json";
 import { useGitHubReleases } from "../hooks/github-releases";
 
 const docsPluginId = undefined; // Default docs plugin instance

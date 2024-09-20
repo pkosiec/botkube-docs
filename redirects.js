@@ -58,6 +58,7 @@ function customRedirections() {
     { from: "/installation", to: "/" },
     { from: "/community", to: "/community/contribute/" },
     { from: "/filters", to: "/plugins/kubernetes" },
+    { from: "/filters", to: "/plugins/kubernetes" },
 
     // v1.10->v1.11 links
     { from: "/configuration/", to: "/self-hosted-configuration" },

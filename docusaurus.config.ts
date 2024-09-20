@@ -63,10 +63,16 @@ const config: Config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "community",
-        path: "community",
-        routeBasePath: "community",
-        sidebarPath: require.resolve("./sidebarsCommunity.js"),
+        id: "chatPlatforms",
+        path: "chat-platforms-docs",
+        routeBasePath: "chat-platforms",
+        editUrl: "https://github.com/kubeshop/botkube-docs/edit/main/",
+        sidebarPath: require.resolve("./chatPlatforms_sidebars.js"),
+        versions: {
+          current: {
+            label: `Unreleased 🚧`,
+          },
+        },
       },
     ],
     [
@@ -117,29 +123,44 @@ const config: Config = {
         items: [
           {
             type: "doc",
-            docId: "installation/installation",
+            docId: "index",
             position: "left",
-            label: "Documentation",
+            label: "Terminal",
+            className: "terminal-version-switcher",
           },
           {
             type: "doc",
-            docId: "contribute/contribute",
-            docsPluginId: "community",
+            docId: "installation/installation",
+            docsPluginId: "chatPlatforms",
             position: "left",
-            label: "Community",
+            label: "Chat Platforms",
+            className: "chat-platforms-version-switcher",
           },
-
           {
             type: "docsVersionDropdown",
             position: "right",
-
             dropdownItemsAfter: [
               {
                 type: "html",
                 value: '<hr class="dropdown-separator">',
               },
               {
-                to: "/versions",
+                to: "/terminal-versions",
+                label: "All versions",
+              },
+            ],
+          },
+          {
+            type: "docsVersionDropdown",
+            position: "right",
+            docsPluginId: "chatPlatforms",
+            dropdownItemsAfter: [
+              {
+                type: "html",
+                value: '<hr class="dropdown-separator">',
+              },
+              {
+                to: "/chat-platforms-versions",
                 label: "All versions",
               },
             ],
@@ -162,10 +183,6 @@ const config: Config = {
           {
             title: "Community",
             items: [
-              {
-                label: "Contribute",
-                to: "/community/contribute",
-              },
               {
                 label: "GitHub",
                 to: "https://github.com/kubeshop/botkube",
@@ -201,7 +218,11 @@ const config: Config = {
             title: "Learn",
             items: [
               {
-                label: "Installation",
+                label: "Terminal Installation",
+                to: "/",
+              },
+              {
+                label: "Chat Platforms Installation",
                 to: "/",
               },
             ],
@@ -210,8 +231,12 @@ const config: Config = {
             title: "Social",
             items: [
               {
-                label: "Twitter",
+                label: "Twitter / X",
                 to: "https://twitter.com/Botkube_io",
+              },
+              {
+                label: "LinkedIn",
+                to: "https://www.linkedin.com/showcase/botkube/posts",
               },
             ],
           },
