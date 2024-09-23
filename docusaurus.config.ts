@@ -129,7 +129,7 @@ const config: Config = {
           },
           {
             type: "doc",
-            docId: "installation/installation",
+            docId: "overview",
             docsPluginId: "chatPlatforms",
             position: "left",
             label: "Chat Platforms",

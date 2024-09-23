@@ -1,7 +1,7 @@
 ---
 id: plugins
 title: Plugins
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 This section aggregates all officially maintained Botkube plugins. Some of them require active [Botkube Cloud](https://app.botkube.io) account.
