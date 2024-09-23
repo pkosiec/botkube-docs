@@ -9,7 +9,7 @@ import archivedVersionsMap from "@site/versions-archived.json";
 import { useGitHubReleases } from "../hooks/github-releases";
 
 const docsPluginId = undefined; // Default docs plugin instance
-  const projectName = "fuse-releases"
+const projectName = "fuse-releases";
 
 const ReleaseChangelogLink: FC<{ url: string; isFetchingReleases: boolean }> = ({ isFetchingReleases, url }) => {
   if (isFetchingReleases) {

@@ -123,10 +123,9 @@ const config: Config = {
         items: [
           {
             type: "doc",
-            docId: "index",
+            docId: "overview",
             position: "left",
             label: "Terminal",
-            className: "terminal-version-switcher",
           },
           {
             type: "doc",
@@ -134,7 +133,6 @@ const config: Config = {
             docsPluginId: "chatPlatforms",
             position: "left",
             label: "Chat Platforms",
-            className: "chat-platforms-version-switcher",
           },
           {
             type: "docsVersionDropdown",
