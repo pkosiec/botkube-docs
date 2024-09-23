@@ -1,11 +1,11 @@
-name: Release
+name: Botkube ChatOps Release
 
 on:
   workflow_dispatch:
     inputs:
       version:
         type: string
-        description: Version of the next release
+        description: Version of the next release (e.g. 1.13)
         required: true
 
 env:
@@ -30,14 +30,6 @@ jobs:
         with:
           go-version-file: magefiles/go.mod
 
-      - name: Validate release version
-        uses: magefile/mage-action@v2
-        with:
-          version: latest
-          args: "release:ensureBotkubeReleased"
-        env:
-          BOTKUBE_RELEASE_VERSION: "${{ inputs.version }}.0"
-
       - name: Set git 'user.name' and 'user.email'
         run: |
           git config user.name "${{ env.git-user }}"
@@ -45,8 +37,8 @@ jobs:
 
       - name: Create a release branch
         run: |
-          git checkout -b release/${{ inputs.version }}
-          git push --set-upstream origin release/${{ inputs.version }}
+          git checkout -b fuse-release/${{ inputs.version }}
+          git push --set-upstream origin fuse-release/${{ inputs.version }}
           npm install
 
       - name: Update versions in installation docs
@@ -75,7 +67,7 @@ jobs:
 
       - name: Run docusaurus versioning
         run: |
-          npm run docusaurus docs:version ${{ inputs.version }}
+          npm run docusaurus docs:version:chatPlatforms ${{ inputs.version }}
 
       - name: Prettier check
         run: |
@@ -84,7 +76,7 @@ jobs:
       - name: Push changes to remote
         run: |
           git add .
-          git commit -m "Prepare docs for ${{ inputs.version }} release"
+          git commit -m "Prepare docs for Botkube ${{ inputs.version }} release"
           git push
           git push origin release/${{ inputs.version }}
 
